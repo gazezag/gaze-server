@@ -2,7 +2,6 @@
   "name": "gaze-pages",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "description": "",
   "license": "MIT",
   "author": {
@@ -16,7 +15,7 @@
     "test:verbose": "jest --verbose",
     "build": "rm -rf dist && tsc",
     "start": "tsc dist/main.ts",
-    "dev": "nodemon --watch src -e ts,tsx --exec ts-node src/main.ts"
+    "dev": "nodemon --watch src -e ts --exec ts-node src/main.ts"
   },
   "files": [
     "dist"

@@ -4,7 +4,7 @@
     "rootDir": "./src",
     "esModuleInterop": true, // support import
     "target": "es5",
-    "module": "commonjs",
+    "module": "CommonJS",
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
