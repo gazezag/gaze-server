@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true, // support import
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "checkJs": true,
+    "removeComments": true,
+    "noEmit": false,
+    "noEmitOnError": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
