@@ -1,11 +1,17 @@
 import Koa from 'koa';
-import { add } from './add1/add';
+import bodyParser from 'koa-bodyparser';
+import staticResource from 'koa-static';
+import cors from 'koa-cors';
+import router from './router/index';
+import { join } from 'path';
 
 const app = new Koa();
 
-app.use(async (ctx: any) => {
-  ctx.body = 'Hello World';
-  console.log(add(1, 2222));
-});
+app.use(staticResource(join(__dirname, './static')));
+app.use(cors());
+app.use(bodyParser());
+
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 app.listen(3001);
