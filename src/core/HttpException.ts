@@ -1,4 +1,3 @@
-// http异常
 export class HttpException extends Error {
   public message: string;
   public errorCode: number;
@@ -6,7 +5,7 @@ export class HttpException extends Error {
   public data: any;
   public isBuffer = false;
   public responseType: string | undefined;
-  constructor(data?: unknown, msg = '服务器异常，请联系管理员', errorCode = 10000, code = 400) {
+  constructor(data = {}, msg = '服务器异常, 请联系管理员', errorCode = 10000, code = 400) {
     super();
     this.message = msg;
     this.errorCode = errorCode;
@@ -14,6 +13,7 @@ export class HttpException extends Error {
     this.data = data;
   }
 }
+
 // http参数异常
 export class ParameterException extends HttpException {
   constructor(msg?: string, errorCode?: number) {
@@ -30,7 +30,7 @@ export class Success extends HttpException {
   public responseType;
   public session;
   constructor(
-    data?: any,
+    data?: unknown,
     msg = 'ok',
     code = 200,
     errorCode = 0,
@@ -38,7 +38,7 @@ export class Success extends HttpException {
     session?: string
   ) {
     super();
-    this.code = code; //200查询成功，201操作成功
+    this.code = code; //200查询成功, 201操作成功
     this.message = msg;
     this.errorCode = errorCode || 0;
     this.data = data;
@@ -46,6 +46,7 @@ export class Success extends HttpException {
     this.session = session;
   }
 }
+
 // 返回文件流
 export class Buffer extends Success {
   public data;
@@ -54,7 +55,7 @@ export class Buffer extends Success {
   public isBuffer;
   constructor(data?: any, responseType?: string, session?: string) {
     super();
-    this.code = 200; //200查询成功，201操作成功
+    this.code = 200; //200查询成功, 201操作成功
     this.message = 'ok';
     this.errorCode = 0;
     this.data = data;
@@ -63,6 +64,7 @@ export class Buffer extends Success {
     this.isBuffer = true;
   }
 }
+
 // 404
 export class NotFount extends HttpException {
   constructor(msg: string, errorCode: number) {
@@ -72,6 +74,7 @@ export class NotFount extends HttpException {
     this.errorCode = errorCode || 10001;
   }
 }
+
 // 授权失败
 export class AuthFailed extends HttpException {
   constructor(msg?: string, errorCode?: number) {
@@ -81,6 +84,7 @@ export class AuthFailed extends HttpException {
     this.errorCode = errorCode || 10002;
   }
 }
+
 // Forbbiden
 export class Forbbiden extends HttpException {
   constructor(msg: string, errorCode?: number) {
@@ -101,7 +105,7 @@ export class QueryFailed extends HttpException {
   }
 }
 
-// 数据库出错
+// 查询失败
 export class DataBaseFailed extends HttpException {
   constructor(msg?: string, errorCode?: number) {
     super();
