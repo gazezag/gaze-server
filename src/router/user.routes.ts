@@ -1,24 +1,25 @@
 import Router from 'koa-router';
+import { Cache } from '../service/cache/index';
 
-const router = new Router({
-  prefix: '/user'
-});
+const router = new Router({ prefix: '/user' });
 
 router
-  .get('/hello-world', ctx => {
-    ctx.body = 'Hello World';
-  })
-  .get('/get-name', async (ctx: any) => {
+  .get('/get-name', async ctx => {
     // TODO LYH
     // if (!(await redisFunc.set('user_lyh', 'demo'))) {
     //   ctx.throw(400, '失败');
     // }
+    const myCache = new Cache({ cacheLimitAmount: 2 });
+    const value = JSON.stringify({ name: 'LYH', age: '20' });
+    console.log('set-result', value);
 
-    // const res = await redisFunc.get('user_lyh');
-    // ctx.body = 'Ethan Teng' + res;
+    myCache.setVal({
+      key: 'a',
+      value
+    });
     ctx.body = 'Ethan Teng';
   })
-  .get('/get-age', async (ctx: any) => {
+  .get('/get-age', async ctx => {
     ctx.body = '23';
   });
 

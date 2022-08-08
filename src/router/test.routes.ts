@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { Success, ParameterException, AuthFailed } from '../core/httpException';
+import { AuthFailed, ParameterException, Success } from '../core/httpException';
 
 const router = new Router({ prefix: '/api' });
 
