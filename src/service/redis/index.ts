@@ -1,5 +1,5 @@
 import Config from '../../config/config';
-import { DataBaseFailed } from '../../core/HttpException';
+import { DataBaseFailed } from '../../core/httpException';
 import redis from './redis';
 
 /**
@@ -35,7 +35,7 @@ export async function selectDb(DbName: number) {
 export async function getList(key: string, isChildObject = false) {
   let data = await redis.lrange(key, 0, -1);
   if (isChildObject) {
-    data = data.map(item => {
+    data = data.map((item: any) => {
       return JSON.parse(item);
     });
   }
@@ -83,7 +83,7 @@ export async function set(key: string, value: string | object | Array<number>, e
  * @param { String } key 键
  * @return { String | array | Object } 返回获取的数据
  */
-export default async function get(key: any) {
+export async function get(key: any) {
   const result = await redis.get(key);
   return result;
 }

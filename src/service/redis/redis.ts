@@ -1,6 +1,6 @@
 import redisConfig from './redisConfig';
-import IoreDis from 'IoreDis';
-const redis = new IoreDis(redisConfig);
+import Redis from 'ioreDis';
+const redis = new Redis(redisConfig);
 export default redis;
 
 setInterval(() => {

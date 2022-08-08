@@ -7,3 +7,8 @@ export default class Config {
     DB: 4
   };
 }
+
+export const ServerConfig = {
+  port: 3001,
+  baseUrl: process.env.NODE_ENV === 'development' ? 'src' : 'dist/src'
+};

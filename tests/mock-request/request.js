@@ -7,7 +7,8 @@ const uploadTarget = {
 const imgRequest = (url, data) => {
   if (!url || !data) return;
 
-  const img = new Image();
+  // const img = new Image();
+  const img = document.createElement('img');
 
   img.onload = () => {
     console.log('loaded...');
