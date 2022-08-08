@@ -1,5 +1,5 @@
 import koa from 'koa';
-import { isInstance } from 'src/utils/objectHandler';
+import { isInstance } from '../utils/objectHandler';
 import { HttpException } from './httpException';
 
 export async function catchError(ctx: koa.Context, next: Function) {
