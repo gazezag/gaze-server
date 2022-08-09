@@ -7,6 +7,8 @@ specifiers:
   '@types/koa-cors': ^0.0.2
   '@types/koa-router': ^7.4.4
   '@types/koa-static': ^4.0.2
+  '@types/moment': ^2.13.0
+  '@types/mysql': ^2.15.21
   '@types/node': ^18.6.3
   '@typescript-eslint/eslint-plugin': ^5.32.0
   '@typescript-eslint/parser': ^5.32.0
@@ -17,7 +19,6 @@ specifiers:
   eslint-plugin-import: ^2.25.2
   eslint-plugin-prettier: ^4.2.1
   husky: ^8.0.1
-  ioredis: ^5.2.2
   jest: ^28.1.3
   koa: ^2.13.4
   koa-bodyparser: ^4.3.0
@@ -27,6 +28,8 @@ specifiers:
   koa-router: ^12.0.0
   koa-static: ^5.0.0
   lint-staged: ^13.0.3
+  moment: ^2.29.4
+  mysql: ^2.18.1
   nodemon: ^2.0.19
   prettier: ^2.7.1
   ts-jest: ^28.0.7
@@ -35,7 +38,6 @@ specifiers:
 
 dependencies:
   cross-env: registry.npmmirror.com/cross-env/7.0.3
-  ioredis: registry.npmmirror.com/ioredis/5.2.2
   koa: registry.npmmirror.com/koa/2.13.4
   koa-bodyparser: registry.npmmirror.com/koa-bodyparser/4.3.0
   koa-cors: registry.npmmirror.com/koa-cors/0.0.16
@@ -43,6 +45,8 @@ dependencies:
   koa-redis: registry.npmmirror.com/koa-redis/4.0.1
   koa-router: registry.npmmirror.com/koa-router/12.0.0
   koa-static: registry.npmmirror.com/koa-static/5.0.0
+  moment: 2.29.4
+  mysql: 2.18.1
 
 devDependencies:
   '@types/jest': registry.npmmirror.com/@types/jest/28.1.6
@@ -51,6 +55,8 @@ devDependencies:
   '@types/koa-cors': registry.npmmirror.com/@types/koa-cors/0.0.2
   '@types/koa-router': registry.npmmirror.com/@types/koa-router/7.4.4
   '@types/koa-static': registry.npmmirror.com/@types/koa-static/4.0.2
+  '@types/moment': 2.13.0
+  '@types/mysql': 2.15.21
   '@types/node': registry.npmmirror.com/@types/node/18.6.3
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.32.0_iosr3hrei2tubxveewluhu5lhy
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
@@ -69,6 +75,95 @@ devDependencies:
   typescript: registry.npmmirror.com/typescript/4.7.4
 
 packages:
+
+  /@types/moment/2.13.0:
+    resolution: {integrity: sha512-DyuyYGpV6r+4Z1bUznLi/Y7HpGn4iQ4IVcGn8zrr1P4KotKLdH0sbK1TFR6RGyX6B+G8u83wCzL+bpawKU/hdQ==}
+    deprecated: This is a stub types definition for Moment (https://github.com/moment/moment). Moment provides its own type definitions, so you don't need @types/moment installed!
+    dependencies:
+      moment: 2.29.4
+    dev: true
+
+  /@types/mysql/2.15.21:
+    resolution: {integrity: sha512-NPotx5CVful7yB+qZbWtXL2fA4e7aEHkihHLjklc6ID8aq7bhguHgeIoC1EmSNTAuCgI6ZXrjt2ZSaXnYX0EUg==}
+    dependencies:
+      '@types/node': 18.6.3
+    dev: true
+
+  /@types/node/18.6.3:
+    resolution: {integrity: sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==}
+    dev: true
+
+  /bignumber.js/9.0.0:
+    resolution: {integrity: sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==}
+    dev: false
+
+  /core-util-is/1.0.3:
+    resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+    dev: false
+
+  /fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /inherits/2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: false
+
+  /isarray/1.0.0:
+    resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
+    dev: false
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+
+  /mysql/2.18.1:
+    resolution: {integrity: sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      bignumber.js: 9.0.0
+      readable-stream: 2.3.7
+      safe-buffer: 5.1.2
+      sqlstring: 2.3.1
+    dev: false
+
+  /process-nextick-args/2.0.1:
+    resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
+    dev: false
+
+  /readable-stream/2.3.7:
+    resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
+    dependencies:
+      core-util-is: 1.0.3
+      inherits: 2.0.4
+      isarray: 1.0.0
+      process-nextick-args: 2.0.1
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+    dev: false
+
+  /safe-buffer/5.1.2:
+    resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
+    dev: false
+
+  /sqlstring/2.3.1:
+    resolution: {integrity: sha512-ooAzh/7dxIG5+uDik1z/Rd1vli0+38izZhGzSa34FwR7IbelPWCCKSNIl8jlL/F7ERvy8CB2jNeM1E9i9mXMAQ==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /string_decoder/1.1.1:
+    resolution: {integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==}
+    dependencies:
+      safe-buffer: 5.1.2
+    dev: false
+
+  /util-deprecate/1.0.2:
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: false
 
   registry.npmmirror.com/@ampproject/remapping/2.2.0:
     resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ampproject/remapping/-/remapping-2.2.0.tgz}
@@ -548,12 +643,6 @@ packages:
     name: '@humanwhocodes/object-schema'
     version: 1.2.1
     dev: true
-
-  registry.npmmirror.com/@ioredis/commands/1.2.0:
-    resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ioredis/commands/-/commands-1.2.0.tgz}
-    name: '@ioredis/commands'
-    version: 1.2.0
-    dev: false
 
   registry.npmmirror.com/@istanbuljs/load-nyc-config/1.1.0:
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz}
@@ -1822,7 +1911,7 @@ packages:
       normalize-path: registry.npmmirror.com/normalize-path/3.0.0
       readdirp: registry.npmmirror.com/readdirp/3.6.0
     optionalDependencies:
-      fsevents: registry.npmmirror.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   registry.npmmirror.com/ci-info/3.3.2:
@@ -2158,13 +2247,6 @@ packages:
     resolution: {integrity: sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/denque/-/denque-1.5.1.tgz}
     name: denque
     version: 1.5.1
-    engines: {node: '>=0.10'}
-    dev: false
-
-  registry.npmmirror.com/denque/2.1.0:
-    resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/denque/-/denque-2.1.0.tgz}
-    name: denque
-    version: 2.1.0
     engines: {node: '>=0.10'}
     dev: false
 
@@ -2835,16 +2917,6 @@ packages:
     version: 1.0.0
     dev: true
 
-  registry.npmmirror.com/fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   registry.npmmirror.com/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/function-bind/-/function-bind-1.1.1.tgz}
     name: function-bind
@@ -3229,25 +3301,6 @@ packages:
       lodash.isarguments: registry.npmmirror.com/lodash.isarguments/3.1.0
       p-map: registry.npmmirror.com/p-map/2.1.0
       redis-commands: registry.npmmirror.com/redis-commands/1.7.0
-      redis-errors: registry.npmmirror.com/redis-errors/1.2.0
-      redis-parser: registry.npmmirror.com/redis-parser/3.0.0
-      standard-as-callback: registry.npmmirror.com/standard-as-callback/2.1.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  registry.npmmirror.com/ioredis/5.2.2:
-    resolution: {integrity: sha512-wryKc1ur8PcCmNwfcGkw5evouzpbDXxxkMkzPK8wl4xQfQf7lHe11Jotell5ikMVAtikXJEu/OJVaoV51BggRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ioredis/-/ioredis-5.2.2.tgz}
-    name: ioredis
-    version: 5.2.2
-    engines: {node: '>=12.22.0'}
-    dependencies:
-      '@ioredis/commands': registry.npmmirror.com/@ioredis/commands/1.2.0
-      cluster-key-slot: registry.npmmirror.com/cluster-key-slot/1.1.0
-      debug: registry.npmmirror.com/debug/4.3.4
-      denque: registry.npmmirror.com/denque/2.1.0
-      lodash.defaults: registry.npmmirror.com/lodash.defaults/4.2.0
-      lodash.isarguments: registry.npmmirror.com/lodash.isarguments/3.1.0
       redis-errors: registry.npmmirror.com/redis-errors/1.2.0
       redis-parser: registry.npmmirror.com/redis-parser/3.0.0
       standard-as-callback: registry.npmmirror.com/standard-as-callback/2.1.0
@@ -3686,7 +3739,7 @@ packages:
       micromatch: registry.npmmirror.com/micromatch/4.0.5
       walker: registry.npmmirror.com/walker/1.0.8
     optionalDependencies:
-      fsevents: registry.npmmirror.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   registry.npmmirror.com/jest-leak-detector/28.1.3:
