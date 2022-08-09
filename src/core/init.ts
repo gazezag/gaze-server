@@ -5,7 +5,7 @@ import staticResource from 'koa-static';
 import Router from 'koa-router';
 import { join } from 'path';
 import { walkDir } from '../utils/fileHandler';
-import { ServerConfig } from '../config/config';
+import { ServerConfig } from '../config/index';
 import { catchError } from './catchError';
 
 class Init {
@@ -29,7 +29,7 @@ class Init {
 
   initRouter() {
     const reg = /.+\.routes\.ts$/;
-    walkDir(join(`${process.cwd()}/${ServerConfig.baseUrl}/router/`), (filePath: string) => {
+    walkDir(join(`${process.cwd()}/${ServerConfig.BASE_URL}/router/`), (filePath: string) => {
       if (reg.test(filePath)) {
         const router: Router = require(filePath).default;
         this.app.use(router.routes());

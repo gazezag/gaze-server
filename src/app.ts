@@ -1,9 +1,9 @@
 import Koa from 'koa';
+import { ServerConfig } from './config';
 import { initMiddleware } from './core/init';
-import { ServerConfig } from './config/config';
 
 const app = new Koa();
 
 initMiddleware(app);
 
-app.listen(ServerConfig.port);
+app.listen(ServerConfig.PORT);
