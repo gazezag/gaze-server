@@ -201,9 +201,12 @@ class InsertSql extends BasicSql {
   /**
    * @description copy the entire table directly to the target
    * @example
-   *    INSERT INTO target_table
-   *        FROM
-   *        SELECT * FROM source_table
+   *
+   * ```sql
+   * INSERT INTO target_table
+   * FROM
+   * SELECT * FROM source_table
+   * ```
    */
   formWhole(tableName: string) {
     this.replace(/\($/g, `${SqlToken.FROM}`);
@@ -324,6 +327,7 @@ class SqlBuilder {
     return new CustomSql(sql);
   }
 
+  // TODO
   // show varables like '%character%';
   // set character_set_client = 字符集名称
   // set character_set_connection = 字符集名称
@@ -338,6 +342,7 @@ class SqlBuilder {
  * @description build sql statements with using chain calls
  * @return return a SqlBuilder instance
  * @example
+ * ```js
  * // get a select statement
  * sql()
  *  .select()
@@ -358,5 +363,6 @@ class SqlBuilder {
  * // `UPDATE user_table
  * //     SET name='Ethan Teng', age='22'
  * //     WHERE id=11111 and create_time='Today;`
+ * ```
  */
 export const sql = () => new SqlBuilder();

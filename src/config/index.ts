@@ -1,5 +1,5 @@
 export const ServerConfig = {
-  BASE_URL: '/api',
+  BASE_URL: '',
   PORT: 3001
 };
 
