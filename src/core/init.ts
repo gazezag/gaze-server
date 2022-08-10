@@ -29,7 +29,7 @@ class Init {
 
   initRouter() {
     const reg = /.+\.routes\.ts$/;
-    walkDir(join(`${process.cwd()}/${ServerConfig.BASE_URL}/router/`), (filePath: string) => {
+    walkDir(join(`${process.cwd()}/${'src'}/router/`), (filePath: string) => {
       if (reg.test(filePath)) {
         const router: Router = require(filePath).default;
         this.app.use(router.routes());
