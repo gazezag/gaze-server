@@ -9,8 +9,8 @@ interface SSEData {
   retry: number;
 }
 
-export const sendSSE = (data: SSEData) => {
-  return (ctx: KoaContext) => {
+export const createPusher = (ctx: KoaContext) => {
+  return (id: string | number, event: string, data: any, retry = 2000) => {
     const stream = new PassThrough();
 
     // set socket
@@ -28,7 +28,7 @@ export const sendSSE = (data: SSEData) => {
 
     //! timer is required here, and I don't know why
     const timer = setInterval(() => {
-      stream.write(transformToSSEData(data));
+      stream.write(transformToSSEData({ id, event, data, retry }));
     }, 500);
 
     stream.on('close', () => {

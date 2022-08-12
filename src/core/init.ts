@@ -5,7 +5,6 @@ import staticResource from 'koa-static';
 import Router from 'koa-router';
 import { join } from 'path';
 import { walkDir } from '../utils/fileHandler';
-import { ServerConfig } from '../config/index';
 import { catchError } from './catchError';
 
 class Init {
@@ -42,7 +41,7 @@ class Init {
   }
 
   initStatic() {
-    this.app.use(staticResource(join(__dirname, './static')));
+    this.app.use(staticResource(join(__dirname, '../static')));
   }
 
   initCatchError() {

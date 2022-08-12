@@ -5,3 +5,4 @@
 **/types
 **/node_modules
 /script
+/src/static

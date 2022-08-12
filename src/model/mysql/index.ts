@@ -1,8 +1,7 @@
 import mysql from 'mysql';
-import { DataBaseFailed } from 'src/core/httpException';
+import mysqlConfing from './mysqlConfig';
 import { isArray } from 'src/utils/typeJudgement';
 import { lineToHumpObject } from './entityTransform';
-import pool from './pool';
 
 interface ExecuteResult {
   msg: string;
@@ -34,114 +33,64 @@ interface ExecuteError {
  *    // do something...
  * }
  */
-const execute = (sql: string): Promise<Array<ExecuteResult | ExecuteError | null>> => {
-  return new Promise(resolve => {
-    pool.getConnection((error, connection) => {
-      if (error) {
-        resolve([
-          null,
-          {
-            error,
-            msg: `Database connection error: ${error.message}`
-          }
-        ]);
-        return;
-      }
-
-      const queryCallback: mysql.queryCallback = (err, res?, fields?) => {
-        // release the connection when done with the connection
-        connection.release();
-
-        if (err) {
+const usePool =
+  (pool: mysql.Pool) =>
+  (sql: string): Promise<Array<ExecuteResult | ExecuteError | null>> => {
+    return new Promise(resolve => {
+      pool.getConnection((error, connection) => {
+        if (error) {
           resolve([
             null,
             {
-              error: err,
-              msg: err.sqlMessage || 'Execution error'
+              error,
+              msg: `Database connection error: ${error.message}`
             }
           ]);
-        } else {
-          resolve([
-            {
-              msg: 'OK',
-              state: 1,
-              results: isArray(res) ? res.map(lineToHumpObject) : res,
-              fields: fields || []
-            },
-            null
-          ]);
+          return;
         }
-      };
-      pool.query(sql, queryCallback);
+
+        const queryCallback: mysql.queryCallback = (err, res?, fields?) => {
+          // release the connection when done with the connection
+          connection.release();
+
+          if (err) {
+            resolve([
+              null,
+              {
+                error: err,
+                msg: err.sqlMessage || 'Execution error'
+              }
+            ]);
+          } else {
+            resolve([
+              {
+                msg: 'OK',
+                state: 1,
+                results: isArray(res) ? res.map(lineToHumpObject) : res,
+                fields: fields || []
+              },
+              null
+            ]);
+          }
+        };
+        pool.query(sql, queryCallback);
+      });
     });
+  };
+
+const getExecute = () => {
+  const pool = mysql.createPool(mysqlConfing);
+
+  pool.on('connection', connection => {
+    // TODO
   });
+
+  pool.on('release', connection => {
+    console.log('Connection %d released', connection.threadId);
+  });
+
+  return usePool(pool);
 };
 
-export class BasicSqlOperation {
-  constructor() {}
-
-  async insert(sql: string): Promise<ExecuteResult> {
-    const [res, err] = await execute(sql);
-    err && this.errorHandler(err as ExecuteError);
-
-    // TODO
-
-    return res as ExecuteResult;
-  }
-
-  async delete(sql: string): Promise<ExecuteResult> {
-    const [res, err] = await execute(sql);
-    err && this.errorHandler(err as ExecuteError);
-
-    // TODO
-
-    return res as ExecuteResult;
-  }
-
-  async update(sql: string): Promise<ExecuteResult> {
-    const [res, err] = await execute(sql);
-    err && this.errorHandler(err as ExecuteError);
-
-    // TODO
-
-    return res as ExecuteResult;
-  }
-
-  async select(sql: string): Promise<ExecuteResult> {
-    const [res, err] = await execute(sql);
-    err && this.errorHandler(err as ExecuteError);
-    return res as ExecuteResult;
-  }
-
-  private errorHandler(error: ExecuteError) {
-    throw new DataBaseFailed(error.msg);
-  }
-}
-
-export const useSql = () => {
-  const insert = async (sql: string): Promise<ExecuteResult> => {
-    const [res, err] = await execute(sql);
-    err && errorHandler(err as ExecuteError);
-
-    // TODO
-
-    return res as ExecuteResult;
-  };
-
-  const select = async (sql: string): Promise<ExecuteResult> => {
-    const [res, err] = await execute(sql);
-    err && errorHandler(err as ExecuteError);
-
-    // TODO
-
-    return res as ExecuteResult;
-  };
-
-  const errorHandler = (error: ExecuteError) => {
-    throw new DataBaseFailed(error.msg);
-  };
-
-  return {
-    // TODO
-  };
-};
+export const execute = getExecute();
+export * from './sqlBuilder';

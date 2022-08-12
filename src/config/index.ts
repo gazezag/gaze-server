@@ -1,3 +1,5 @@
+export * from './static';
+
 export const ServerConfig = {
   BASE_URL: '',
   PORT: 3001
