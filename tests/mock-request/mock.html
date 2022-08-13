@@ -1,0 +1,175 @@
+<!--
+ * @Author: Ethan Teng
+ * @Date: 2022-08-13 12:58:05
+ * @LastEditTime: 2022-08-13 21:14:37
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+
+    <script>
+      const imgRequest = (url, data) => {
+        if (!url || !data) return;
+
+        const img = new Image();
+
+        img.onload = () => {
+          console.log('loaded...');
+        };
+
+        img.onerror = () => {
+          console.log('error....');
+        };
+
+        img.src = `${url}${url.indexOf('?') < 0 ? '?' : '&'}${encodeURIComponent(
+          JSON.stringify(data)
+        )}`;
+      };
+
+      const beaconRequest = (url, data) => {
+        if (!url || !data) return;
+
+        // OK
+        // application/x-www-form-urlencoded
+        // const param = new URLSearchParams({
+        //   data: JSON.stringify(data)
+        // });
+
+        // OK
+        // 'content-type': 'application/x-www-form-urlencoded',
+        const param = new Blob([JSON.stringify(data)], {
+          type: 'application/x-www-form-urlencoded'
+        });
+
+        // bug
+        // multipart/form-data
+        // const param = new FormData();
+        // param.append('key', 'hello');
+        // param.append('value', 'hello');
+
+        // bug
+        // application/json
+        // const param = new Blob([JSON.stringify(data)], {
+        //   type: 'application/json'
+        // });
+
+        // bug
+        // const param = new Blob([JSON.stringify(data)], {
+        //   type: 'text/plain;charset=utf-8'
+        // });
+
+        // bug
+        // const param = JSON.stringify(data);
+
+        navigator.sendBeacon(url, param);
+      };
+
+      const ajaxRequest = (url, data) => {
+        if (!url || !data) return;
+
+        const client = new XMLHttpRequest();
+        client.open('POST', url, false);
+        client.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        client.send(JSON.stringify(data));
+      };
+
+      const upload = (url, data) => {
+        const len = `${url}${url.indexOf('?') < 0 ? '?' : '&'}${encodeURIComponent(
+          JSON.stringify(data)
+        )}`.length;
+
+        // 2083 compatible with ie browser
+        // chrome 8182
+        // safari 80000
+        // firefox 65536
+        // opera 190000
+        if (len < 2083) {
+          imgRequest(url, data);
+        } else if (isBeaconSupported()) {
+          beaconRequest(url, data);
+        } else {
+          ajaxRequest(url, data);
+        }
+      };
+
+      const platformInfo = {
+        type: 'device-info',
+        time: Date.now(),
+        value: {
+          origin: 'http://localhost:3000',
+          url: 'http://localhost:3000/#/page2',
+          title: 'Vite + Vue + TS',
+          referer: 'http://localhost:3000/',
+          os: {
+            type: 'xxxxxxxxMacOs',
+            version: ''
+          },
+          browser: {
+            type: 'Chrome',
+            version: '103.0.0.0'
+          },
+          language: 'zh-CN'
+        }
+      };
+
+      imgRequest('http://localhost:3001/platform-info/empty.gif', platformInfo);
+
+      // ---------------------------
+
+      const source = new EventSource('http://localhost:3001/get-data');
+
+      const start = () => {
+        source.addEventListener(
+          'open',
+          () => {
+            console.log('SSE connection established');
+          },
+          false
+        );
+
+        source.addEventListener(
+          'message',
+          e => {
+            console.log(`message: ${e.data}`);
+            source.close();
+          },
+          false
+        );
+
+        source.addEventListener(
+          'device-info',
+          e => {
+            console.log(`device-info: ${e.data}`);
+            source.close();
+          },
+          false
+        );
+
+        source.addEventListener(
+          'page-info',
+          e => {
+            console.log(`page-info: ${e.data}`);
+            source.close();
+          },
+          true
+        );
+      };
+
+      const over = () => {
+        source.close();
+      };
+
+      const showMessage = text => {
+        hint.innerHTML = text;
+      };
+    </script>
+  </body>
+</html>

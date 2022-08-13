@@ -15,7 +15,7 @@
     "test:verbose": "jest --verbose",
     "dev": "cross-env NODE_ENV=development nodemon --watch src -e ts --exec ts-node src/app.ts",
     "build": "rm -rf dist/* && tsc",
-    "start": "tsc && cross-env NODE_ENV=production node dist/app.ts",
+    "start": "tsc && cross-env NODE_ENV=production node dist/app.js",
     "format": "prettier --write \"src/**/*.ts?(x)\" && eslint --fix --ext .ts src"
   },
   "files": [
