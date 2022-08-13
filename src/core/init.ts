@@ -1,6 +1,6 @@
 import Koa from 'koa';
 import koaBodyParser from 'koa-bodyparser';
-import cors from 'koa-cors';
+import cors from 'koa2-cors';
 import staticResource from 'koa-static';
 import Router from 'koa-router';
 import { join } from 'path';
@@ -15,11 +15,15 @@ class Init {
   }
 
   initAll() {
+    this.initCors();
     this.initBodyParser();
     this.initRouter();
-    this.initCors();
     this.initStatic();
     this.initCatchError();
+  }
+
+  initCors() {
+    this.app.use(cors());
   }
 
   initBodyParser() {
@@ -34,10 +38,6 @@ class Init {
         this.app.use(router.routes());
       }
     });
-  }
-
-  initCors() {
-    this.app.use(cors());
   }
 
   initStatic() {

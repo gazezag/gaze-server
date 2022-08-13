@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { sendSSE } from '../core/sse';
+import { createPusher } from '../core/sse';
 
 const router = new Router({ prefix: '/test-sse' });
 
@@ -11,7 +11,7 @@ router.get('/sse', async ctx => {
     age: 22
   };
 
-  sendSSE(id, event, data)(ctx);
+  createPusher(ctx)(id, event, data);
 });
 
 export default router;
