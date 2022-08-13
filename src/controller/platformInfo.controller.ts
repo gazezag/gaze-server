@@ -1,20 +1,19 @@
-import { createPusher } from '../core/sse';
+import { store } from '../core/store';
 import { deviceInfoServer, pageinfoServer } from '../server/platformInfo.server';
-import { KoaContext } from '../types/koa';
 import { PlatformInfoDTO } from '../types/platformInfo';
+import { MessagePriority, ServerSendEventName } from '../config';
+import { getMessage } from '../utils/wrapMessage';
 
 /**
  * @description store and push the data which has accepted from the router
- * @param { KoaContext } ctx context object of router
  * @param { PlatformInfoDTO } platformInfoDTO data collected by SDK
  */
-export const platformInfoController = async (ctx: KoaContext, platformInfoDTO: PlatformInfoDTO) => {
+export const platformInfoController = async (platformInfoDTO: PlatformInfoDTO) => {
   // store and clean up the data
   const deviceInfo = await deviceInfoServer(platformInfoDTO);
   const pageInfo = await pageinfoServer(platformInfoDTO);
 
-  // push data to client page
-  const push = createPusher(ctx);
-  push(Date.now(), 'device-info', deviceInfo);
-  push(Date.now(), 'page-info', pageInfo);
+  // enqueue data to store
+  store.enqueue(getMessage(deviceInfo, ServerSendEventName.deviceInfo), MessagePriority.BASIC_INFO);
+  store.enqueue(getMessage(pageInfo, ServerSendEventName.pageInfo), MessagePriority.BASIC_INFO);
 };

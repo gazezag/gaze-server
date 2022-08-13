@@ -1,4 +1,3 @@
-import { getUID } from '../utils/uidGenerator';
 import { PlatformInfoDTO, DeviceInfoPO, PageInfoPO } from '../types/platformInfo';
 import { execute, sql } from '../model/mysql';
 import { TableName } from '../config';
@@ -13,7 +12,7 @@ export const deviceInfoServer = async (platformInfo: PlatformInfoDTO) => {
   const { os, browser, language } = platformInfo.value;
 
   const deviceInfoPO: DeviceInfoPO = {
-    uid: getUID(time),
+    uid: time, // TODO
     time,
     os_type: os.type,
     os_version: os.version,
@@ -43,6 +42,7 @@ export const deviceInfoServer = async (platformInfo: PlatformInfoDTO) => {
 
   if (err) {
     // TODO handle the error
+    console.log(`Error ${JSON.stringify(err)}`);
     return err;
   }
 
@@ -54,7 +54,7 @@ export const pageinfoServer = async (platformInfo: PlatformInfoDTO) => {
   const { origin, url, title, referer } = platformInfo.value;
 
   const pageInfoPO: PageInfoPO = {
-    uid: getUID(time),
+    uid: time, // TODO
     time,
     origin,
     url,
@@ -73,6 +73,7 @@ export const pageinfoServer = async (platformInfo: PlatformInfoDTO) => {
 
   if (err) {
     // TODO handle the error
+    console.log(`Error ${JSON.stringify(err)}`);
     return err;
   }
 

@@ -1,16 +1,8 @@
 import { PassThrough } from 'stream';
 import { KoaContext } from '../types/koa';
-import { get, has } from '../utils/objectHandler';
-
-interface SSEData {
-  id: string | number;
-  event: string;
-  data: any;
-  retry: number;
-}
 
 export const createPusher = (ctx: KoaContext) => {
-  return (id: string | number, event: string, data: any, retry = 2000) => {
+  return (messageStr: string) => {
     const stream = new PassThrough();
 
     // set socket
@@ -28,24 +20,11 @@ export const createPusher = (ctx: KoaContext) => {
 
     //! timer is required here, and I don't know why
     const timer = setInterval(() => {
-      stream.write(transformToSSEData({ id, event, data, retry }));
+      stream.write(messageStr);
     }, 500);
 
     stream.on('close', () => {
-      console.log(`SSE connection[${data.id}] closed`);
       clearInterval(timer);
     });
   };
-};
-
-const transformToSSEData = (o: SSEData) => {
-  return (
-    ['id', 'event', 'data', 'retry']
-      .filter(k => has(o, k))
-      .map(k => {
-        const value = get(o, k);
-        return `${k}:${k === 'data' ? JSON.stringify(value) : value}`;
-      })
-      .join('\n') + '\n\n'
-  );
 };

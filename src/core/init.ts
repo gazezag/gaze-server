@@ -1,7 +1,7 @@
 import Koa from 'koa';
 import koaBodyParser from 'koa-bodyparser';
 import cors from 'koa2-cors';
-import staticResource from 'koa-static';
+import serve from 'koa-static';
 import Router from 'koa-router';
 import { join } from 'path';
 import { walkDir } from '../utils/fileHandler';
@@ -41,7 +41,15 @@ class Init {
   }
 
   initStatic() {
-    this.app.use(staticResource(join(__dirname, '../static')));
+    // init page resource
+    this.app.use(
+      serve(join(__dirname, '../static/page'), {
+        index: 'index.html'
+      })
+    );
+
+    // init image resource
+    this.app.use(serve(join(__dirname, '../static')));
   }
 
   initCatchError() {
