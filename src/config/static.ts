@@ -4,3 +4,9 @@ export enum TableName {
   pageInfo = 'page_info'
   // TODO
 }
+
+export enum ServerSendEventName {
+  deviceInfo = 'device-info',
+  pageInfo = 'page-info'
+  // TODO
+}
