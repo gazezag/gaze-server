@@ -1,4 +1,5 @@
 export interface ResourceFlowItem {
+  time: number;
   name: string;
   transferSize: number;
   initiatorType: 'script' | 'img' | 'other';
@@ -13,7 +14,17 @@ export interface ResourceFlowItem {
   contentDownload: number;
 }
 
-export interface ResourceFlow {
+export interface ResourceFlowDTO {
+  time: number;
   type: string;
   value: Array<ResourceFlowItem>;
+}
+
+export interface ResourceFlowItemPO extends ResourceFlowItem {
+  groupId: number; // use the sending time as ID temporarily
+}
+
+export interface ResourceFlowPO {
+  time: number;
+  value: Array<ResourceFlowItemPO>;
 }
