@@ -14,30 +14,52 @@ const transformToSSEData = (o: Message) => {
 };
 
 class Store {
+  private static _instance: Store;
   private messageQueue: Array<MessageItem>;
 
-  constructor() {
+  private constructor() {
     this.messageQueue = [];
   }
 
+  static instance(): Store {
+    if (!this._instance) {
+      this._instance = new Store();
+    }
+
+    return this._instance;
+  }
+
   enqueue(message: Message, priority: MessagePriority) {
-    this.messageQueue.forEach((item, i, queue) => {
-      if (priority < item.priority) {
-        queue.splice(i, 0, {
-          priority,
-          value: message
-        });
-      }
-    });
+    const item = {
+      priority,
+      value: message
+    };
+
+    if (this.isEmpty()) {
+      this.messageQueue.push(item);
+    } else {
+      this.messageQueue.forEach((v, i) => {
+        if (priority >= v.priority) {
+          this.messageQueue.splice(i, 0, item);
+          return;
+        }
+      });
+    }
   }
 
   dequeue(): string | null {
-    return this.isEmpty() ? null : transformToSSEData(this.messageQueue.shift()?.value!);
+    return this.isEmpty() ? null : transformToSSEData(this.messageQueue.pop()?.value!);
   }
 
   isEmpty(): boolean {
     return this.messageQueue.length === 0;
   }
+
+  getAll() {
+    return this.messageQueue.reduce((prev, cur) => {
+      return prev + cur;
+    }, '');
+  }
 }
 
-export const store = new Store();
+export const store = Store.instance();
