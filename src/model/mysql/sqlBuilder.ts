@@ -1,5 +1,5 @@
 import { isString } from '../../utils/typeJudgement';
-import { humpToLine } from './entityTransform';
+import { humpToLine } from '../../utils/entityTransform';
 
 enum SqlToken {
   // operation
@@ -172,6 +172,14 @@ class BasicSql {
       return i ? `${prev},${param}` : `${param}`;
     }, '')}`;
   }
+
+  protected concatColum(params: Array<SqlValue>): string {
+    return `${params.reduce((prev, cur, i) => {
+      const param = `\`${humpToLine(`${cur}`)}\``;
+
+      return i ? `${prev},${param}` : `${param}`;
+    }, '')}`;
+  }
 }
 
 class InsertSql extends BasicSql {
@@ -187,7 +195,7 @@ class InsertSql extends BasicSql {
   }
 
   choose(columnNames: Array<SqlColumn>) {
-    this.pushStr(this.concatParam(columnNames), false);
+    this.pushStr(this.concatColum(columnNames));
     this.pushStr(')', false);
     return this;
   }

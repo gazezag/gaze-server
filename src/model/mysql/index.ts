@@ -1,7 +1,7 @@
 import mysql from 'mysql';
 import mysqlConfing from './mysqlConfig';
 import { isArray } from '../../utils/typeJudgement';
-import { lineToHumpObject } from './entityTransform';
+import { lineToHumpObject } from '../../utils/entityTransform';
 
 interface ExecuteResult {
   msg: string;
@@ -82,11 +82,11 @@ const getExecute = () => {
   const pool = mysql.createPool(mysqlConfing);
 
   pool.on('connection', connection => {
-    console.log(`Connection ${connection.threadId} connected`);
+    // console.log(`Connection ${connection.threadId} connected`);
   });
 
   pool.on('release', connection => {
-    console.log(`Connection ${connection.threadId} released`);
+    // console.log(`Connection ${connection.threadId} released`);
   });
 
   return usePool(pool);
