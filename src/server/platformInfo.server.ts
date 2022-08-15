@@ -1,7 +1,7 @@
 import { PlatformInfoDTO, DeviceInfoPO, PageInfoPO } from '../types/platformInfo';
 import { execute, sql } from '../model/mysql';
 import { TableName } from '../config';
-import { getValueList } from '../utils/objectHandler';
+import { getKeyList, getValueList } from '../utils/objectHandler';
 
 /**
  * @description store and verify the data
@@ -12,7 +12,6 @@ export const deviceInfoServer = async (platformInfo: PlatformInfoDTO) => {
   const { os, browser, language } = platformInfo.value;
 
   const deviceInfoPO: DeviceInfoPO = {
-    uid: time, // TODO
     time,
     os_type: os.type,
     os_version: os.version,
@@ -27,15 +26,7 @@ export const deviceInfoServer = async (platformInfo: PlatformInfoDTO) => {
     sql()
       .insert()
       .into(TableName.deviceInfo)
-      .choose([
-        'uid',
-        'time',
-        'os_type',
-        'os_version',
-        'browser_type',
-        'browser_version',
-        'language'
-      ])
+      .choose(getKeyList(deviceInfoPO))
       .values(getValueList(deviceInfoPO))
       .end()
   );
@@ -54,7 +45,6 @@ export const pageinfoServer = async (platformInfo: PlatformInfoDTO) => {
   const { origin, url, title, referer } = platformInfo.value;
 
   const pageInfoPO: PageInfoPO = {
-    uid: time, // TODO
     time,
     origin,
     url,
@@ -66,7 +56,7 @@ export const pageinfoServer = async (platformInfo: PlatformInfoDTO) => {
     sql()
       .insert()
       .into(TableName.pageInfo)
-      .choose(['uid', 'time', 'origin', 'url', 'title', 'referer'])
+      .choose(getKeyList(pageInfoPO))
       .values(getValueList(pageInfoPO))
       .end()
   );

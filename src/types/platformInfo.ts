@@ -1,5 +1,3 @@
-import { UID } from './UID';
-
 export interface PlatformInfoDTO {
   type: string;
   time: number;
@@ -21,7 +19,6 @@ export interface PlatformInfoDTO {
 }
 
 export interface DeviceInfoPO {
-  uid: UID;
   time: number;
   os_type: string;
   os_version: string;
@@ -31,7 +28,6 @@ export interface DeviceInfoPO {
 }
 
 export interface PageInfoPO {
-  uid: UID;
   time: number;
   origin: string;
   url: string;
