@@ -1,3 +1,5 @@
+import { humpToLine } from './entityTransform';
+
 export const isInstance = (o: Object, c: any) => o instanceof c;
 
 export const getKeys = (o: Object): Array<PropertyKey> => Reflect.ownKeys(o);
@@ -14,5 +16,7 @@ export const get = (o: Object, k: PropertyKey): any => {
 
 // can clear the sdie-effect
 export const set = (o: Object, k: PropertyKey, v: any): boolean => Reflect.set(o, k, v);
+
+export const getKeyList = (o: Object): Array<string> => Reflect.ownKeys(o).map(humpToLine);
 
 export const getValueList = (o: object): Array<any> => getKeys(o).map(k => get(o, k));
