@@ -1,5 +1,5 @@
 import { ResourceFlowItem } from './resourceFlow';
-import { HttpItem, OperationItem, RouterChangeItem } from './userBehavior';
+import { HttpItemDTO, OperationItemDTO, RouterChangeItemDTO } from './userBehavior';
 
 export interface Stuff {
   uid: string;
@@ -41,8 +41,8 @@ export interface Stuff {
   };
   resourceFlow: Array<ResourceFlowItem>;
   behaviorInfo: {
-    routerChange: Array<RouterChangeItem>;
-    http: Array<HttpItem>;
-    operation: Array<OperationItem>;
+    routerChange: Array<RouterChangeItemDTO>;
+    http: Array<HttpItemDTO>;
+    operation: Array<OperationItemDTO>;
   };
 }
