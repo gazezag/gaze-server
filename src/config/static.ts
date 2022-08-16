@@ -1,5 +1,4 @@
 export enum TableName {
-  index = 'index',
   deviceInfo = 'device_info',
   pageInfo = 'page_info',
   performanceTiming = 'performance_timing',
@@ -7,7 +6,12 @@ export enum TableName {
   resourceFlow = 'resource_flow',
   routerChange = 'router_change',
   operation = 'operation',
-  http = 'http'
+  http = 'http',
+  stackTrace = 'stack_trace',
+  jsError = 'js_error',
+  resourceError = 'resource_error',
+  httpError = 'http_error',
+  corsError = 'cors_error'
   // TODO
 }
 
@@ -19,6 +23,11 @@ export enum ServerSendEventName {
   resourceFlow = 'resource-flow',
   routerChange = 'router-change',
   operation = 'operation',
-  http = 'http'
+  http = 'http',
+  stackTrace = 'stack-trace',
+  jsError = 'js-error',
+  resourceError = 'resource-error',
+  httpError = 'http-error',
+  corsError = 'cors-error'
   // TODO
 }
