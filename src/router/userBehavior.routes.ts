@@ -30,6 +30,7 @@ router
         : {};
 
     ctx.response.set('Access-Control-Allow-Origin', '*');
+    ctx.response.set('Access-Control-Allow-Origin', '*');
     ctx.response.status = 200;
     ctx.response.body = 'OK';
 
