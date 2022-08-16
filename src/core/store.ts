@@ -38,11 +38,20 @@ class Store {
     if (this.isEmpty()) {
       this.messageQueue.push(item);
     } else {
-      this.messageQueue.forEach((v, i) => {
-        if (priority >= v.priority) {
+      // for (let i = 0; i < this.messageQueue.length; i++) {
+      //   const cur = this.messageQueue[i];
+      //   if (priority >= cur.priority) {
+      //     this.messageQueue.splice(i, 0, item);
+      //     return;
+      //   }
+      // }
+      this.messageQueue.some((cur, i) => {
+        if (priority >= cur.priority) {
           this.messageQueue.splice(i, 0, item);
-          return;
+          return true;
         }
+
+        return false;
       });
     }
   }
