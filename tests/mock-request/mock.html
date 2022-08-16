@@ -1,7 +1,7 @@
 <!--
  * @Author: Ethan Teng
  * @Date: 2022-08-13 12:58:05
- * @LastEditTime: 2022-08-16 12:55:02
+ * @LastEditTime: 2022-08-16 13:50:29
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -610,12 +610,31 @@
           }
         });
       };
+
+      const testVisitInfo = () => {
+        const source = start();
+        source.addEventListener(
+          'visit-info',
+          e => {
+            console.log(`message: ${e.data}`);
+          },
+          false
+        );
+
+        upload('http://localhost:3001/visit-info/empty.gif', {
+          time: Date.now(),
+          origin: 'http://baidu.com',
+          type: 'normal'
+        });
+      };
+
       // testPlatformInfo();
       // testPerformanceTiming();
       // testNavigationTiming();
       // testResourceFlow();
       // testUserBehavior();
-      testErrorInfo();
+      // testErrorInfo();
+      testVisitInfo();
     </script>
   </body>
 </html>
