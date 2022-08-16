@@ -1,4 +1,4 @@
-import { MessagePriority } from 'src/config';
+import { MessagePriority, ServerConfig } from '../config';
 import { Message, MessageItem } from '../types/message';
 
 const transformToSSEData = (o: Message) => {
@@ -16,9 +16,11 @@ const transformToSSEData = (o: Message) => {
 class Store {
   private static _instance: Store;
   private messageQueue: Array<MessageItem>;
+  private visited: Set<string>;
 
   private constructor() {
     this.messageQueue = [];
+    this.visited = new Set();
   }
 
   static instance(): Store {
@@ -38,13 +40,6 @@ class Store {
     if (this.isEmpty()) {
       this.messageQueue.push(item);
     } else {
-      // for (let i = 0; i < this.messageQueue.length; i++) {
-      //   const cur = this.messageQueue[i];
-      //   if (priority >= cur.priority) {
-      //     this.messageQueue.splice(i, 0, item);
-      //     return;
-      //   }
-      // }
       this.messageQueue.some((cur, i) => {
         if (priority >= cur.priority) {
           this.messageQueue.splice(i, 0, item);
@@ -68,6 +63,27 @@ class Store {
     return this.messageQueue.reduce((prev, cur) => {
       return prev + cur;
     }, '');
+  }
+
+  has(item: string): boolean {
+    return this.visited.has(item);
+  }
+
+  add(item: string) {
+    this.visited.add(item);
+
+    // TODO
+    setTimeout(() => {
+      this.del(item);
+    }, ServerConfig.ACCESS_LIFE_TIME);
+  }
+
+  del(item: string) {
+    this.visited.delete(item);
+  }
+
+  claer() {
+    this.visited.clear();
   }
 }
 
