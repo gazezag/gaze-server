@@ -368,8 +368,7 @@ JS 运行时报错
         "col": 3
       }
     ]
-  },
-  "breadcrumbs": []
+  }
 }
 ```
 
@@ -409,8 +408,7 @@ JS 运行时报错
         "col": 3
       }
     ]
-  },
-  "breadcrumbs": []
+  }
 }
 ```
 
@@ -427,8 +425,7 @@ JS 运行时报错
     "src": "http://thisisaerrorimg.com/errorImg",
     "outerHTML": "<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">",
     "tagName": "IMG"
-  },
-  "breadcrumbs": []
+  }
 }
 ```
 
@@ -446,8 +443,7 @@ http 请求出错
     "status": 404,
     "response": "",
     "statusText": "Not Found"
-  },
-  "breadcrumbs": []
+  }
 }
 ```
 
@@ -463,8 +459,7 @@ http 请求出错
   "message": "",
   "detail": {
     "tagName": "script"
-  },
-  "breadcrumbs": []
+  }
 }
 ```
 
