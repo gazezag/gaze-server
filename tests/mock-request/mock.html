@@ -1,7 +1,7 @@
 <!--
  * @Author: Ethan Teng
  * @Date: 2022-08-13 12:58:05
- * @LastEditTime: 2022-08-15 23:07:34
+ * @LastEditTime: 2022-08-16 12:55:02
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -473,11 +473,149 @@
         });
       };
 
+      const testErrorInfo = () => {
+        const source = start();
+        source.addEventListener(
+          'stack-trace',
+          e => {
+            console.log(`message: ${e.data}`);
+          },
+          false
+        );
+        source.addEventListener(
+          'js-error',
+          e => {
+            console.log(`message: ${e.data}`);
+          },
+          false
+        );
+        source.addEventListener(
+          'resource-error',
+          e => {
+            console.log(`message: ${e.data}`);
+          },
+          false
+        );
+        source.addEventListener(
+          'http-error',
+          e => {
+            console.log(`message: ${e.data}`);
+          },
+          false
+        );
+        source.addEventListener(
+          'cors-error',
+          e => {
+            console.log(`message: ${e.data}`);
+          },
+          false
+        );
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'js',
+          errorUid:
+            'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=',
+          time: Date.now(),
+          message: 'Uncaught Error: this is a Error',
+          detail: {
+            type: 'Error',
+            stackTrace: [
+              {
+                filename: 'http://localhost:3000/src/test.ts',
+                functionName: 't',
+                line: 2,
+                col: 9
+              },
+              {
+                filename: 'http://localhost:3000/src/main.ts?t=1660205635051',
+                functionName: '',
+                line: 14,
+                col: 3
+              }
+            ]
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'unhandledrejection',
+          errorUid:
+            'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=',
+          time: Date.now(),
+          message: {},
+          detail: {
+            type: {},
+            stackTrace: [
+              {
+                filename: 'http://localhost:3000/src/test.ts?t=1660205726302',
+                functionName: '',
+                line: 3,
+                col: 12
+              },
+              {
+                filename: '<anonymous>',
+                functionName: 'new Promise',
+                line: null,
+                col: null
+              },
+              {
+                filename: 'http://localhost:3000/src/test.ts?t=1660205726302',
+                functionName: 't',
+                line: 2,
+                col: 3
+              },
+              {
+                filename: 'http://localhost:3000/src/main.ts?t=1660205726302',
+                functionName: '',
+                line: 14,
+                col: 3
+              }
+            ]
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'resource',
+          errorUid: 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=',
+          time: 6944.0999999940395,
+          message: '',
+          detail: {
+            type: 'Unknwon',
+            src: 'http://thisisaerrorimg.com/errorImg',
+            outerHTML: '<img src="http://thisisaerrorimg.com/errorImg" alt="img">',
+            tagName: 'IMG'
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'http',
+          errorUid:
+            'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=',
+          time: 3127.7000000029802,
+          message: 'xxxxxxx',
+          detail: {
+            status: 404,
+            response: '',
+            statusText: 'Not Found'
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'cors',
+          errorUid:
+            'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=',
+          time: 3127.7000000029802,
+          message: '',
+          detail: {
+            tagName: 'script'
+          }
+        });
+      };
       // testPlatformInfo();
       // testPerformanceTiming();
       // testNavigationTiming();
       // testResourceFlow();
-      testUserBehavior();
+      // testUserBehavior();
+      testErrorInfo();
     </script>
   </body>
 </html>
