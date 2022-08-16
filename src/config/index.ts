@@ -3,7 +3,8 @@ export * from './static';
 export const ServerConfig = {
   BASE_URL: '',
   PORT: 3001,
-  PUSH_INTERVAL: 500
+  PUSH_INTERVAL: 500,
+  ACCESS_LIFE_TIME: 60 * 60 * 1000
 };
 
 export const MySQLConfig = {
