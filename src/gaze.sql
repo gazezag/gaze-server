@@ -11,7 +11,7 @@
  Target Server Version : 80028 (8.0.28)
  File Encoding         : 65001
 
- Date: 15/08/2022 23:23:15
+ Date: 16/08/2022 13:11:40
 */
 
 SET NAMES utf8mb4;
@@ -28,12 +28,33 @@ CREATE TABLE `cors_error` (
   `message` varchar(255) DEFAULT NULL,
   `tag_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of cors_error
 -- ----------------------------
 BEGIN;
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (1, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (2, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (3, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (4, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (5, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (6, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (7, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (8, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (9, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (10, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (11, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (12, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (13, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (14, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (15, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (16, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (17, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (18, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (19, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (20, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
+INSERT INTO `cors_error` (`id`, `time`, `error_uid`, `message`, `tag_name`) VALUES (21, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', '', '');
 COMMIT;
 
 -- ----------------------------
@@ -107,15 +128,36 @@ CREATE TABLE `http_error` (
   `error_uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
   `status` int DEFAULT NULL,
-  `response` varchar(255) DEFAULT NULL,
   `status_text` varchar(255) DEFAULT NULL,
+  `response` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of http_error
 -- ----------------------------
 BEGIN;
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (1, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (2, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (3, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (4, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (5, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (6, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (7, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (8, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (9, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (10, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (11, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (12, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (13, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (14, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (15, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (16, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (17, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (18, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (19, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (20, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
+INSERT INTO `http_error` (`id`, `time`, `error_uid`, `message`, `status`, `status_text`, `response`) VALUES (21, 3128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'xxxxxxx', 404, 'Not Found', '');
 COMMIT;
 
 -- ----------------------------
@@ -125,18 +167,60 @@ DROP TABLE IF EXISTS `js_error`;
 CREATE TABLE `js_error` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `time` bigint NOT NULL,
-  `type` varchar(255) DEFAULT NULL,
   `error_uid` varchar(255) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
   `error_type` varchar(255) DEFAULT NULL,
-  `stack_trace_uid` int NOT NULL,
+  `reason` varchar(255) DEFAULT NULL,
+  `stack_trace_uid` bigint NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of js_error
 -- ----------------------------
 BEGIN;
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (1, 1660618030394, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660618030394);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (2, 1660618030394, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660618030394);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (3, 1660618211282, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660618211282);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (4, 1660618211281, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660618211281);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (5, 1660618224393, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660618224393);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (6, 1660618224393, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660618224393);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (7, 1660621681446, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660621681446);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (8, 1660621681447, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660621681447);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (9, 1660621807986, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660621807986);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (10, 1660621807986, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660621807986);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (11, 1660621852243, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660621852243);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (12, 1660621852243, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660621852243);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (13, 1660621869075, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660621869075);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (14, 1660621869075, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660621869075);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (15, 1660621910712, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660621910712);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (16, 1660621910712, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660621910712);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (17, 1660624698442, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660624698442);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (18, 1660624698442, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660624698442);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (19, 1660624879912, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660624879912);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (20, 1660624879913, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660624879913);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (21, 1660624963665, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660624963665);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (22, 1660624963665, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660624963665);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (23, 1660625034920, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625034920);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (24, 1660625034921, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625034921);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (25, 1660625048711, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625048711);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (26, 1660625048711, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625048711);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (27, 1660625147128, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625147128);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (28, 1660625147129, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625147129);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (29, 1660625205124, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625205124);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (30, 1660625205124, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625205124);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (31, 1660625242168, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625242168);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (32, 1660625242169, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625242169);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (33, 1660625249758, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625249758);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (34, 1660625249758, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625249758);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (35, 1660625361863, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625361863);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (36, 1660625361863, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625361863);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (37, 1660625711738, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625711738);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (38, 1660625711739, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625711739);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (39, 1660625734814, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660625734814);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (40, 1660625734815, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660625734815);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (41, 1660626354994, 'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=', 'Uncaught Error: this is a Error', 'Error', '', 1660626354994);
+INSERT INTO `js_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `reason`, `stack_trace_uid`) VALUES (42, 1660626354994, 'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=', '[object Object]', '[object Object]', '', 1660626354994);
 COMMIT;
 
 -- ----------------------------
@@ -373,12 +457,33 @@ CREATE TABLE `resource_error` (
   `outer_html` varchar(255) DEFAULT NULL,
   `tag_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of resource_error
 -- ----------------------------
 BEGIN;
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (1, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (2, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (3, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (4, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (5, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (6, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (7, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (8, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (9, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (10, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (11, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (12, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (13, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (14, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (15, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (16, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (17, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (18, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (19, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (20, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
+INSERT INTO `resource_error` (`id`, `time`, `error_uid`, `message`, `error_type`, `src`, `outer_html`, `tag_name`) VALUES (21, 6944, 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=', '', 'Unknwon', 'http://thisisaerrorimg.com/errorImg', '<img src=\"http://thisisaerrorimg.com/errorImg\" alt=\"img\">', 'IMG');
 COMMIT;
 
 -- ----------------------------
@@ -452,17 +557,143 @@ COMMIT;
 DROP TABLE IF EXISTS `stack_trace`;
 CREATE TABLE `stack_trace` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `group_id` bigint NOT NULL,
   `filename` varchar(255) DEFAULT NULL,
   `function_name` varchar(255) DEFAULT NULL,
   `line` int DEFAULT NULL,
   `col` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of stack_trace
 -- ----------------------------
 BEGIN;
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (1, 1660618030394, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (2, 1660618030394, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (3, 1660618030394, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (4, 1660618030394, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (5, 1660618030394, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (6, 1660618211282, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (7, 1660618211282, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (8, 1660618211282, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (9, 1660618211282, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (10, 1660618211281, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (11, 1660618211281, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (12, 1660618224393, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (13, 1660618224393, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (14, 1660618224393, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (15, 1660618224393, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (16, 1660618224393, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (17, 1660618224393, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (18, 1660621681446, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (19, 1660621681446, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (20, 1660621681447, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (21, 1660621681447, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (22, 1660621681447, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (23, 1660621681447, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (24, 1660621807986, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (25, 1660621807986, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (26, 1660621807986, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (27, 1660621807986, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (28, 1660621807986, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (29, 1660621807986, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (30, 1660621852243, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (31, 1660621852243, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (32, 1660621852243, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (33, 1660621852243, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (34, 1660621852243, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (35, 1660621852243, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (36, 1660621869075, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (37, 1660621869075, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (38, 1660621869075, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (39, 1660621869075, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (40, 1660621869075, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (41, 1660621869075, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (42, 1660621910712, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (43, 1660621910712, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (44, 1660621910712, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (45, 1660621910712, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (46, 1660621910712, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (47, 1660621910712, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (48, 1660624698442, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (49, 1660624698442, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (50, 1660624698442, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (51, 1660624698442, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (52, 1660624698442, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (53, 1660624698442, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (54, 1660624879912, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (55, 1660624879912, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (56, 1660624879913, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (57, 1660624879913, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (58, 1660624879913, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (59, 1660624879913, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (60, 1660624963665, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (61, 1660624963665, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (62, 1660624963665, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (63, 1660624963665, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (64, 1660624963665, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (65, 1660624963665, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (66, 1660625034920, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (67, 1660625034921, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (68, 1660625034921, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (69, 1660625034921, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (70, 1660625034920, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (71, 1660625034921, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (72, 1660625048711, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (73, 1660625048711, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (74, 1660625048711, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (75, 1660625048711, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (76, 1660625048711, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (77, 1660625048711, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (78, 1660625147128, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (79, 1660625147128, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (80, 1660625147129, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (81, 1660625147129, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (82, 1660625147129, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (83, 1660625147129, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (84, 1660625205124, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (85, 1660625205124, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (86, 1660625205124, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (87, 1660625205124, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (88, 1660625205124, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (89, 1660625205124, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (90, 1660625242168, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (91, 1660625242168, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (92, 1660625242169, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (93, 1660625242169, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (94, 1660625242169, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (95, 1660625242169, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (96, 1660625249758, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (97, 1660625249758, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (98, 1660625249758, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (99, 1660625249758, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (100, 1660625249758, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (101, 1660625249758, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (102, 1660625361863, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (103, 1660625361863, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (104, 1660625361863, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (105, 1660625361863, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (106, 1660625361863, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (107, 1660625361863, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (108, 1660625711738, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (109, 1660625711738, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (110, 1660625711739, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (111, 1660625711739, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (112, 1660625711739, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (113, 1660625711739, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (114, 1660625734814, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (115, 1660625734814, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (116, 1660625734815, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (117, 1660625734815, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (118, 1660625734815, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (119, 1660625734815, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (120, 1660626354994, 'http://localhost:3000/src/test.ts', 't', 2, 9);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (121, 1660626354994, 'http://localhost:3000/src/main.ts?t=1660205635051', '', 14, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (122, 1660626354994, 'http://localhost:3000/src/test.ts?t=1660205726302', '', 3, 12);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (123, 1660626354994, '<anonymous>', 'new Promise', 0, 0);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (124, 1660626354994, 'http://localhost:3000/src/test.ts?t=1660205726302', 't', 2, 3);
+INSERT INTO `stack_trace` (`id`, `group_id`, `filename`, `function_name`, `line`, `col`) VALUES (125, 1660626354994, 'http://localhost:3000/src/main.ts?t=1660205726302', '', 14, 3);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
