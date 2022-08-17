@@ -25,7 +25,7 @@ router.get('/get-data', async ctx => {
     if (!store.isEmpty()) {
       stream.write(store.dequeue());
     }
-  }, 500);
+  }, 100);
 
   stream.on('close', () => {
     clearInterval(timer);
