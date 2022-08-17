@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">click</button>
+
+    <script>
+      const imgRequest = (url, data) => {
+        if (!url || !data) return;
+
+        const img = new Image();
+
+        img.onload = () => {
+          console.log('loaded...');
+        };
+
+        img.onerror = () => {
+          console.log('error....');
+        };
+
+        img.src = `${url}${url.indexOf('?') < 0 ? '?' : '&'}${encodeURIComponent(
+          JSON.stringify(data)
+        )}`;
+      };
+
+      const beaconRequest = (url, data) => {
+        if (!url || !data) return;
+        const param = new Blob([JSON.stringify(data)], {
+          type: 'application/x-www-form-urlencoded'
+        });
+
+        navigator.sendBeacon(url, param);
+      };
+
+      const ajaxRequest = (url, data) => {
+        if (!url || !data) return;
+
+        const client = new XMLHttpRequest();
+        client.open('POST', url, false);
+        client.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        client.setRequestHeader('Access-Control-Allow-Origin', '*');
+        client.send(JSON.stringify(data));
+      };
+
+      const upload = (url, data) => {
+        const len = `${url}${url.indexOf('?') < 0 ? '?' : '&'}${encodeURIComponent(
+          JSON.stringify(data)
+        )}`.length;
+
+        if (len < 2083) {
+          imgRequest(url, data);
+        } else if (window.navigator.sendBeacon) {
+          beaconRequest(url, data);
+        } else {
+          ajaxRequest(url, data);
+        }
+      };
+
+      const testReq1 = () => {
+        upload('http://localhost:3001/platform-info/empty.gif', {
+          type: 'device-info',
+          time: Date.now(),
+          value: {
+            origin: 'http://localhost:3000',
+            url: 'http://localhost:3000/#/page2',
+            title: 'Vite + Vue + TS',
+            referer: 'http://localhost:3000/',
+            os: {
+              type: 'xxxxxxxxMacOs',
+              version: ''
+            },
+            browser: {
+              type: 'Chrome',
+              version: '103.0.0.0'
+            },
+            language: 'zh-CN'
+          }
+        });
+      };
+
+      const testReq2 = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3001/info/fetch-all?begin=0&end=1660629078736');
+        xhr.send();
+        xhr.addEventListener('readystatechange', () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+          }
+        });
+      };
+
+      document.querySelector('#btn').addEventListener('click', () => testReq2());
+    </script>
+  </body>
+</html>
