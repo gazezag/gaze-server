@@ -10,7 +10,7 @@ export const lineToHump = (str: string): string => {
     return str;
   }
 
-  return str.replace(/\_\w/, (char: string) => char.toUpperCase());
+  return str.replace(/\_(\w)/, (char: string) => char[1].toUpperCase());
 };
 
 /**
