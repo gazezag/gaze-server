@@ -3,14 +3,14 @@ import mysqlConfing from './mysqlConfig';
 import { isArray } from '../../utils/typeJudgement';
 import { lineToHumpObject } from '../../utils/entityTransform';
 
-interface ExecuteResult {
+export interface ExecuteResult {
   msg: string;
   state: number;
   results: any;
   fields: Array<mysql.FieldInfo>;
 }
 
-interface ExecuteError {
+export interface ExecuteError {
   error: mysql.MysqlError;
   msg: string;
 }
