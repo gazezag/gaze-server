@@ -1,7 +1,6 @@
 import Router from 'koa-router';
 import { errorInfoController } from '../controller/errorInfo.controller';
 import { ErrorInfoDTO } from '../types/errorInfo';
-import { navigationTimingController } from '../controller/navigationTiming.controller';
 
 const router = new Router({ prefix: '/error-info' });
 

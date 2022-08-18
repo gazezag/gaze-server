@@ -1,4 +1,4 @@
-import { fetchAllServer } from 'src/server/fetchAll.server';
+import { fetchAllServer } from '../server/fetchAll.server';
 
 /**
  * @description get all table data with server function
