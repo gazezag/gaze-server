@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { fetchAllServer } from '../server/fetchAll.server';
+import { fetchAllController } from '../controller/fetchAll.controller';
 
 const router = new Router({ prefix: '/info' });
 
@@ -9,7 +9,7 @@ router
    */
   .get('/fetch-all', async (ctx, next) => {
     const { begin, end } = ctx.query;
-    const data = await fetchAllServer(parseInt(begin as string), parseInt(end as string));
+    const data = await fetchAllController(begin as string, end as string);
 
     ctx.response.set('Access-Control-Allow-Origin', '*');
     ctx.response.status = 200;

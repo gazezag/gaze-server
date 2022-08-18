@@ -1,6 +1,10 @@
+import { fetchAllServer } from 'src/server/fetchAll.server';
+
 /**
- * @Author: Ethan Teng
- * @Date: 2022-08-16 21:47:41
- * @LastEditTime: 2022-08-16 21:47:42
- * @Description:
+ * @description get all table data with server function
+ * @param { String } begin the time starting of this inquiry
+ * @param { String } end the time end of this query
  */
+export const fetchAllController = async (begin: string, end: string) => {
+  return await fetchAllServer(parseInt(begin), parseInt(end));
+};
