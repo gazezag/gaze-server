@@ -12,12 +12,14 @@ export const resourceFlowServer = async (
 ): Promise<ResourceFlowPO> => {
   const { time, value: flowListDTO } = resourceFlowDTO;
 
-  const flowListPO: Array<ResourceFlowItemPO> = flowListDTO.map(itemDTO => {
-    return {
-      groupId: time,
-      ...itemDTO
-    };
-  });
+  const flowListPO: Array<ResourceFlowItemPO> = flowListDTO
+    .filter(itemDTO => itemDTO.name.indexOf('platform-info/empty.gif?') === -1)
+    .map(itemDTO => {
+      return {
+        groupId: time,
+        ...itemDTO
+      };
+    });
 
   const works = flowListPO.reduce((works, itemPO) => {
     works.push(
