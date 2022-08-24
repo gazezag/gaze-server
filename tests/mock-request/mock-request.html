@@ -61,7 +61,7 @@
         }
       };
 
-      const testReq1 = () => {
+      const testPlatformInfo = () => {
         upload('http://localhost:3001/platform-info/empty.gif', {
           type: 'device-info',
           time: Date.now(),
@@ -97,7 +97,7 @@
       const testVisitedInfo = () => {
         upload('http://localhost:3001/visit-info/empty.gif', {
           time: Date.now(),
-          origin: 'http://EthanTeng.com',
+          origin: 'http://baidu.com',
           type: 'normal'
         });
       };
@@ -223,7 +223,254 @@
         });
       };
 
-      document.querySelector('#btn').addEventListener('click', () => testNavigationTiming());
+      const testUserBehavior = () => {
+        ajaxRequest('http://localhost:3001/user-behavior/add', {
+          time: Date.now(),
+          value: [
+            {
+              type: 'router-change',
+              page: 'http://localhost:3000/#/page2',
+              time: Date.now(),
+              detail: {
+                method: 'Hash',
+                href: 'http://localhost:3000/#/page2',
+                hash: '#/page2'
+              }
+            },
+            {
+              type: 'router-change',
+              page: 'http://localhost:3000/#/page1',
+              time: Date.now(),
+              detail: {
+                method: 'Hash',
+                href: 'http://localhost:3000/#/page1',
+                hash: '#/page1'
+              }
+            },
+            {
+              type: 'router-change',
+              page: 'http://localhost:3000/page1',
+              time: Date.now(),
+              detail: {
+                method: 'History',
+                href: 'http://localhost:3000/page1',
+                pathname: '/page1'
+              }
+            },
+            {
+              type: 'router-change',
+              page: 'http://localhost:3000/page2',
+              time: Date.now(),
+              detail: {
+                method: 'History',
+                href: 'http://localhost:3000/page2',
+                pathname: '/page2'
+              }
+            }
+          ]
+        });
+
+        ajaxRequest('http://localhost:3001/user-behavior/add', {
+          time: Date.now(),
+          value: [
+            {
+              type: 'request',
+              page: '',
+              time: Date.now(),
+              detail: {
+                method: 'GET',
+                url: 'http://localhost:8080/api/get-name',
+                headers: {
+                  Accept: 'application/json, text/plain, */*',
+                  Cache: 'no-cache'
+                },
+                body: '',
+                status: 0,
+                statusText: '',
+                requestTime: 72.19999992847443,
+                responseTime: 76.39999997615814,
+                response: ''
+              }
+            },
+            {
+              type: 'request',
+              page: '',
+              time: Date.now(),
+              detail: {
+                method: 'GET',
+                url: 'http://localhost:8080/api/fetch-get',
+                headers: {},
+                body: '',
+                status: 0,
+                statusText: '',
+                requestTime: 72.60000002384186,
+                responseTime: 0,
+                response: ''
+              }
+            }
+          ]
+        });
+
+        ajaxRequest('http://localhost:3001/user-behavior/add', {
+          time: Date.now(),
+          value: [
+            {
+              type: 'operation',
+              page: '',
+              time: Date.now(),
+              detail: {
+                type: 'click',
+                target: {},
+                count: 1,
+                id: 'ipt',
+                classList: [],
+                tagName: 'input',
+                innerText: ''
+              }
+            },
+            {
+              type: 'operation',
+              page: '',
+              time: Date.now(),
+              detail: {
+                type: 'keydown',
+                target: {},
+                count: 13,
+                id: 'ipt',
+                classList: [],
+                tagName: 'input',
+                innerText: ' [Shift] Hello  [Shift] World'
+              }
+            },
+            {
+              type: 'operation',
+              page: '',
+              time: Date.now(),
+              detail: {
+                type: 'click',
+                target: {},
+                count: 7,
+                id: 'btn',
+                classList: ['hello', 'world', 'this', 'is', 'a', 'className'],
+                tagName: 'button',
+                innerText: ' button click click'
+              }
+            }
+          ]
+        });
+      };
+
+      const testError = () => {
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'js',
+          errorUid:
+            'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=',
+          time: Date.now(),
+          message: 'Uncaught Error: this is a Error',
+          detail: {
+            type: 'Error',
+            stackTrace: [
+              {
+                filename: 'http://localhost:3000/src/test.ts',
+                functionName: 't',
+                line: 2,
+                col: 9
+              },
+              {
+                filename: 'http://localhost:3000/src/main.ts?t=1660205635051',
+                functionName: '',
+                line: 14,
+                col: 3
+              }
+            ]
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'unhandledrejection',
+          errorUid:
+            'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=',
+          time: Date.now(),
+          message: {},
+          detail: {
+            type: {},
+            stackTrace: [
+              {
+                filename: 'http://localhost:3000/src/test.ts?t=1660205726302',
+                functionName: '',
+                line: 3,
+                col: 12
+              },
+              {
+                filename: '<anonymous>',
+                functionName: 'new Promise',
+                line: null,
+                col: null
+              },
+              {
+                filename: 'http://localhost:3000/src/test.ts?t=1660205726302',
+                functionName: 't',
+                line: 2,
+                col: 3
+              },
+              {
+                filename: 'http://localhost:3000/src/main.ts?t=1660205726302',
+                functionName: '',
+                line: 14,
+                col: 3
+              }
+            ]
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'resource',
+          errorUid: 'cmVzb3VyY2UtaHR0cCUzQSUyRiUyRnRoaXNpc2FlcnJvcmltZy5jb20lMkZlcnJvckltZy1JTUc=',
+          time: Date.now(),
+          message: '',
+          detail: {
+            type: 'Unknwon',
+            src: 'http://thisisaerrorimg.com/errorImg',
+            outerHTML: '<img src="http://thisisaerrorimg.com/errorImg" alt="img">',
+            tagName: 'IMG'
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'http',
+          errorUid:
+            'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=',
+          time: Date.now(),
+          message: 'xxxxxxx',
+          detail: {
+            status: 404,
+            response: '',
+            statusText: 'Not Found'
+          }
+        });
+
+        upload('http://localhost:3001/error-info/empty.gif', {
+          type: 'cors',
+          errorUid:
+            'anMtVW5jYXVnaHQlMjBFcnJvciUzQSUyMHRoaXMlMjBpcyUyMGElMjBFcnJvci1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBMzAwMCUyRnNyYyUyRnRlc3QudHM=',
+          time: Date.now(),
+          message: '',
+          detail: {
+            tagName: 'script'
+          }
+        });
+      };
+
+      document.querySelector('#btn').addEventListener('click', () => {
+        // testPlatformInfo();
+        testVisitedInfo();
+        // testFP();
+        // testLCP();
+        // testNavigationTiming();
+        // testResourceFlow();
+        // testError();
+        // testUserBehavior();
+      });
     </script>
   </body>
 </html>
