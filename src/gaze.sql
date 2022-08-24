@@ -11,7 +11,7 @@
  Target Server Version : 80028 (8.0.28)
  File Encoding         : 65001
 
- Date: 21/08/2022 21:54:55
+ Date: 24/08/2022 16:53:21
 */
 
 SET NAMES utf8mb4;
@@ -25,7 +25,7 @@ CREATE TABLE `cors_error` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `time` bigint NOT NULL,
   `error_uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
+  `message` varchar(2047) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `tag_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
@@ -74,7 +74,7 @@ CREATE TABLE `http_error` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `time` bigint NOT NULL,
   `error_uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
+  `message` varchar(2047) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `status` int DEFAULT NULL,
   `status_text` varchar(255) DEFAULT NULL,
   `response` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE `js_error` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `time` bigint NOT NULL,
   `error_uid` varchar(255) DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
+  `message` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `error_type` varchar(255) DEFAULT NULL,
   `reason` varchar(255) DEFAULT NULL,
   `stack_trace_uid` bigint NOT NULL,
@@ -171,7 +171,7 @@ CREATE TABLE `resource_error` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `time` bigint NOT NULL,
   `error_uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
+  `message` varchar(2047) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `error_type` varchar(255) DEFAULT NULL,
   `src` varchar(255) DEFAULT NULL,
   `outer_html` varchar(255) DEFAULT NULL,
