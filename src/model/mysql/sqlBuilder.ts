@@ -167,7 +167,8 @@ class BasicSql {
 
   protected concatParam(params: Array<SqlValue>, isValue = false): string {
     return `${params.reduce((prev, cur, i) => {
-      const param = isValue ? `'${cur}'` : humpToLine(`${cur}`);
+      // const param = isValue ? `'${cur}'` : humpToLine(`${cur}`);
+      const param = isValue ? `'${this.handleStringParam(cur)}'` : humpToLine(`${cur}`);
 
       return i ? `${prev},${param}` : `${param}`;
     }, '')}`;
@@ -179,6 +180,10 @@ class BasicSql {
 
       return i ? `${prev},${param}` : `${param}`;
     }, '')}`;
+  }
+
+  private handleStringParam(param: SqlValue): string {
+    return String(param).replace(/(')/g, `\\'`);
   }
 }
 

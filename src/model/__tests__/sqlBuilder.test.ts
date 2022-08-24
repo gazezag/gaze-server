@@ -16,13 +16,13 @@ describe('sqlBuilder', () => {
           .values(['test', 123, '2021-12-12 00:00:00'])
           .end()
       ).toStrictEqual(
-        `INSERT INTO user_table (name,pasasword,create_time) VALUES ('test','123','2021-12-12 00:00:00');`
+        "INSERT INTO user_table ( `name`,`pasasword`,`create_time`) VALUES ('test','123','2021-12-12 00:00:00');"
       );
     });
 
     test('test fromWhole', () => {
       expect(builder.into('user_table').formWhole('other_user_table').end()).toStrictEqual(
-        `INSERT INTO user_table FROM SELECT * FROM other_user_table;`
+        'INSERT INTO user_table FROM SELECT * FROM other_user_table;'
       );
     });
   });
@@ -118,6 +118,21 @@ describe('sqlBuilder', () => {
           .end()
       ).toStrictEqual(
         `SELECT name AS myName, age AS myAge, create_time AS myCreateTime FROM user_table;`
+      );
+    });
+  });
+
+  describe('test concatColum', () => {
+    test('should work', () => {
+      expect(
+        sql()
+          .insert()
+          .into('tableName')
+          .choose(['hello', 'world'])
+          .values(['hello', "This is a 'Hello World'"])
+          .end()
+      ).toStrictEqual(
+        "INSERT INTO tableName ( `hello`,`world`) VALUES ('hello','This is a \\'Hello World\\'');"
       );
     });
   });
