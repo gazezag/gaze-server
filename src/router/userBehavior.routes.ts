@@ -26,7 +26,7 @@ router
       cotnentType === 'application/x-www-form-urlencoded'
         ? JSON.parse(Object.keys(ctx.request.body)[0]).data // no better way to deal with it here for the time being
         : cotnentType === 'application/json; charset=UTF-8'
-        ? ctx.request.body
+        ? ctx.request.body //! bug here  .data?
         : {};
 
     ctx.response.set('Access-Control-Allow-Origin', '*');
