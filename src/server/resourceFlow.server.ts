@@ -13,7 +13,7 @@ export const resourceFlowServer = async (
   const { time, value: flowListDTO } = resourceFlowDTO;
 
   const flowListPO: Array<ResourceFlowItemPO> = flowListDTO
-    .filter(itemDTO => itemDTO.name.indexOf('platform-info/empty.gif?') === -1)
+    .filter(itemDTO => itemDTO.name.indexOf('empty.gif?') === -1)
     .map(itemDTO => {
       return {
         groupId: time,

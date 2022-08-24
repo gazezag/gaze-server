@@ -22,7 +22,6 @@ import {
  */
 export const errorInfoServer = async (errorInfoDTO: ErrorInfoDTO) => {
   const works: Array<Promise<any>> = [];
-
   const errorInfo = getErrorInfo(errorInfoDTO, works);
 
   // store data into database
