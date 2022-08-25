@@ -1,0 +1,23 @@
+
+.n-card[data-v-f843c949] {
+  border: 1px solid #e8e8eb;
+  border-radius: 20px;
+}
+.hoverable-shadow[data-v-f843c949] {
+  /* box-shadow: 0px 1.6px 2.2px rgba(0, 0, 0, 0.011),
+    0px 3.8px 5.3px rgba(0, 0, 0, 0.023), 0px 7.1px 10px rgba(0, 0, 0, 0.034),
+    0px 12.7px 17.9px rgba(0, 0, 0, 0.046),
+    0px 23.8px 33.4px rgba(0, 0, 0, 0.058), 0px 57px 80px rgba(0, 0, 0, 0.07); */
+  /* box-shadow: 3.8px 3.3px 2.9px rgba(0, 0, 0, 0.023),
+    12.7px 10.9px 9.8px rgba(0, 0, 0, 0.046), 57px 49px 44px rgba(0, 0, 0, 0.07); */
+  /* box-shadow: 0px 3.3px 2.9px rgba(0, 0, 0, 0.05),
+    0px 10.9px 9.8px rgba(0, 0, 0, 0.078), 0px 49px 44px rgba(0, 0, 0, 0.17); */
+  box-shadow: 0px 0.5px 2.9px rgba(0, 0, 0, 0.05),
+    0px 1.8px 9.8px rgba(0, 0, 0, 0.078), 0px 8px 44px rgba(0, 0, 0, 0.17);
+}
+.hoverable-shadow[data-v-f843c949]:hover {
+  box-shadow: none;
+}
+.n-card[data-v-f843c949]:hover {
+  border: 1px solid rgba(73, 63, 145, 0.7);
+}

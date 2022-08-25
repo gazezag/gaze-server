@@ -57,8 +57,8 @@ const jsErrorHandler = (infoDTO: ErrorInfoDTO, works: Array<Promise<any>>): Erro
   const jsErrorInfoPO: JsErrorInfoPO = {
     time,
     errorUid,
-    message,
-    errorType,
+    message: (message as any) === {} ? '' : message,
+    errorType: (errorType as any) === {} ? 'UnHandledRejection' : errorType,
     reason: (detail as PromiseRejectDetail).reason || '',
     stackTraceUid: time
   };

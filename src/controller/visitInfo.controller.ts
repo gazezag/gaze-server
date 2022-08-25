@@ -11,11 +11,11 @@ import { visitInfoServer } from '../server/visitInfo.server';
  */
 export const visitInfoController = async (visitInfoDTO: VisitInfoDTO, ip: string) => {
   // enqueue data to store while the current IP address does not exist in store
-  if (!store.has(ip)) {
-    store.add(ip);
+  // if (!store.has(ip)) {
+  // store.add(ip);
 
-    // store and clean up the data
-    const visitInfo = await visitInfoServer(visitInfoDTO);
-    store.enqueue(getMessage(visitInfo, ServerSendEventName.visitInfo), MessagePriority.BASIC_INFO);
-  }
+  // store and clean up the data
+  const visitInfo = await visitInfoServer(visitInfoDTO);
+  store.enqueue(getMessage(visitInfo, ServerSendEventName.visitInfo), MessagePriority.BASIC_INFO);
+  // }
 };

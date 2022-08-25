@@ -391,9 +391,9 @@
           errorUid:
             'dW5oYW5kbGVkcmVqZWN0aW9uLUVycm9yJTNBJTIwVGhpcyUyMGlzJTIwYSUyMHByb21pc2UlMjByZWplY3Rpb24tRXJyb3I=',
           time: Date.now(),
-          message: {},
+          message: '',
           detail: {
-            type: {},
+            type: 'Unknwon',
             stackTrace: [
               {
                 filename: 'http://localhost:3000/src/test.ts?t=1660205726302',
@@ -462,12 +462,12 @@
       };
 
       document.querySelector('#btn').addEventListener('click', () => {
-        // testPlatformInfo();
+        testPlatformInfo();
         testVisitedInfo();
-        // testFP();
-        // testLCP();
-        // testNavigationTiming();
-        // testResourceFlow();
+        testFP();
+        testLCP();
+        testNavigationTiming();
+        testResourceFlow();
         // testError();
         // testUserBehavior();
       });
