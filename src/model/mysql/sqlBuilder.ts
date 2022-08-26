@@ -374,8 +374,21 @@ class SqlBuilder {
  *  .equalTo('Today')
  *  .end();
  * // `UPDATE user_table
- * //     SET name='Ethan Teng', age='22'
- * //     WHERE id=11111 and create_time='Today;`
+ * //     SET name='Ethan Teng', age=22
+ * //     WHERE id=11111 and create_time='Today;'`
  * ```
  */
 export const sql = () => new SqlBuilder();
+
+sql()
+  .update('user_table')
+  .set('name', 'Ethan Teng')
+  .set('age', 22)
+  .where('id')
+  .equalTo(11111)
+  .and('createTime')
+  .equalTo('Today')
+  .end();
+// `UPDATE user_table
+//     SET name='Ethan Teng', age=22
+//     WHERE id=11111 and create_time='Today;'`
