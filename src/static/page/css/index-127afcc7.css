@@ -1,0 +1,16 @@
+.n-layout-sider[data-v-ba4f516a] {
+  max-height: var(40vh);
+}
+.n-layout-sider[data-v-ba4f516a] .n-menu-item-content__icon {
+  color: #5c5c5c;
+}
+.n-layout-sider[data-v-ba4f516a] .n-menu .n-menu-item-content .n-menu-item-content-header a {
+  color: #5c5c5c;
+}
+.n-layout-sider[data-v-ba4f516a] .n-menu .n-menu-item-content.n-menu-item-content--selected::before {
+  background-color: #ffffff;
+}
+.n-layout-sider[data-v-ba4f516a] .n-menu .n-menu-item-content.n-menu-item-content--selected .n-menu-item-content-header a,
+.n-layout-sider[data-v-ba4f516a] .n-menu .n-menu-item-content.n-menu-item-content--selected .n-menu-item-content__icon {
+  color: #4b3f97;
+}
