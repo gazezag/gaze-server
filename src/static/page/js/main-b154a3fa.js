@@ -14550,19 +14550,12 @@ const useErrorInfoStore = defineStore("errorInfo", () => {
     return flatedList.value.length;
   });
   const pushJsErrorInfo = (item) => {
-    const weekDays = getWeekDays();
     const itemObj = { info: item, stackTrace: [] };
-    for (let i = 0; i < 7; i++) {
-      if (item.time > weekDays[i] && item.time < weekDays[i + 1] || i === 6 && item.time > weekDays[i] && item.time < getWeekDayEnd()) {
-        if (!errorInfo.jsError[i]) {
-          errorInfo.jsError[i] = [itemObj];
-        } else {
-          errorInfo.jsError[i].push(itemObj);
-        }
-        break;
-      } else {
-        errorInfo.jsError[i] = [];
-      }
+    const idx = getIntervalIdx(item.time);
+    if (errorInfo.jsError[idx]) {
+      errorInfo.jsError[idx].push(itemObj);
+    } else {
+      errorInfo.jsError[idx] = [itemObj];
     }
   };
   const pushStackTraceInfo = (item) => {
@@ -14756,7 +14749,6 @@ const useVisitInfoStore = defineStore("visitInfo", () => {
   });
   const pvTotal = computed(() => {
     let res = 0;
-    console.log(visitInfoList.value);
     try {
       res = visitInfoList.value.reduce((total, curList) => {
         if (curList) {
@@ -16789,12 +16781,12 @@ const routes = [
   {
     path: "/overview",
     name: "Overview",
-    component: () => __vitePreload(() => import("./index-14ecb35a.js"), true ? ["index-14ecb35a.js","../css/index-1b9ed3a9.css","Panel-52de3899.js","../css/Panel-69551513.css","Space-a825831f.js","index-8bd7339b.js","Icon-20c98a7b.js","use-merged-state-83482f5b.js","fade-in-width-expand.cssr-829053eb.js","MainHeader-70dab35c.js","../css/MainHeader-e6262d5e.css","WarningOutline-aedac44f.js"] : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./index-ffd79457.js"), true ? ["index-ffd79457.js","../css/index-1b9ed3a9.css","Panel-2ae0748d.js","../css/Panel-69551513.css","Space-025b428f.js","index-b09f8e69.js","Icon-eb094341.js","use-merged-state-d9ecddb6.js","fade-in-width-expand.cssr-d4070e8e.js","MainHeader-8ae156ab.js","../css/MainHeader-e6262d5e.css","WarningOutline-12c12a9d.js"] : void 0, import.meta.url)
   },
   {
     path: "/layout",
     name: "Layout",
-    component: () => __vitePreload(() => import("./index-8548bc28.js"), true ? ["index-8548bc28.js","../css/index-127afcc7.css","Icon-20c98a7b.js","Space-a825831f.js","use-merged-state-83482f5b.js","MainHeader-70dab35c.js","../css/MainHeader-e6262d5e.css","WarningOutline-aedac44f.js","fade-in-width-expand.cssr-829053eb.js","ChevronRight-a44d3503.js","Tooltip-5fb9556b.js"] : void 0, import.meta.url),
+    component: () => __vitePreload(() => import("./index-9ffd0dba.js"), true ? ["index-9ffd0dba.js","../css/index-127afcc7.css","Icon-eb094341.js","Space-025b428f.js","use-merged-state-d9ecddb6.js","MainHeader-8ae156ab.js","../css/MainHeader-e6262d5e.css","WarningOutline-12c12a9d.js","fade-in-width-expand.cssr-d4070e8e.js","ChevronRight-c12bf639.js","Tooltip-1b67c8ec.js"] : void 0, import.meta.url),
     beforeEnter: () => {
       if (localStorage.getItem("weekDay")) {
         return true;
@@ -16806,27 +16798,27 @@ const routes = [
       {
         path: "/performance-timing",
         name: "PerformanceTiming",
-        component: () => __vitePreload(() => import("./index-7fd24680.js"), true ? ["index-7fd24680.js","../css/index-8e246c6e.css","Panel-52de3899.js","../css/Panel-69551513.css","Space-a825831f.js","WarningOutline-aedac44f.js","Icon-20c98a7b.js","use-merged-state-83482f5b.js","Tooltip-5fb9556b.js"] : void 0, import.meta.url)
+        component: () => __vitePreload(() => import("./index-f0afba45.js"), true ? ["index-f0afba45.js","../css/index-8e246c6e.css","Panel-2ae0748d.js","../css/Panel-69551513.css","Space-025b428f.js","WarningOutline-12c12a9d.js","Icon-eb094341.js","use-merged-state-d9ecddb6.js","Tooltip-1b67c8ec.js"] : void 0, import.meta.url)
       },
       {
         path: "/navigation-timing",
         name: "NavigationTiming",
-        component: () => __vitePreload(() => import("./index-c46bcd57.js"), true ? ["index-c46bcd57.js","../css/index-b3902dd9.css","Panel-52de3899.js","../css/Panel-69551513.css","Space-a825831f.js","index-8bd7339b.js"] : void 0, import.meta.url)
+        component: () => __vitePreload(() => import("./index-d47135e2.js"), true ? ["index-d47135e2.js","../css/index-b3902dd9.css","Panel-2ae0748d.js","../css/Panel-69551513.css","Space-025b428f.js","index-b09f8e69.js"] : void 0, import.meta.url)
       },
       {
         path: "/resource-flow",
         name: "ResourseFlow",
-        component: () => __vitePreload(() => import("./index-ef851466.js"), true ? ["index-ef851466.js","../css/index-7eecd80f.css","Panel-52de3899.js","../css/Panel-69551513.css","Space-a825831f.js","index-8bd7339b.js"] : void 0, import.meta.url)
+        component: () => __vitePreload(() => import("./index-dfd85abd.js"), true ? ["index-dfd85abd.js","../css/index-7eecd80f.css","Panel-2ae0748d.js","../css/Panel-69551513.css","Space-025b428f.js","index-b09f8e69.js"] : void 0, import.meta.url)
       },
       {
         path: "/user-behavior",
         name: "UserBehavior",
-        component: () => __vitePreload(() => import("./index-c8ced890.js"), true ? ["index-c8ced890.js","../css/index-60a016d1.css","Panel-52de3899.js","../css/Panel-69551513.css","Space-a825831f.js","Table-fba35049.js","use-merged-state-83482f5b.js","ChevronRight-a44d3503.js"] : void 0, import.meta.url)
+        component: () => __vitePreload(() => import("./index-8cda368f.js"), true ? ["index-8cda368f.js","../css/index-60a016d1.css","Panel-2ae0748d.js","../css/Panel-69551513.css","Space-025b428f.js","Table-26eb2b43.js","use-merged-state-d9ecddb6.js","ChevronRight-c12bf639.js"] : void 0, import.meta.url)
       },
       {
         path: "/error-info",
         name: "ErrorInfo",
-        component: () => __vitePreload(() => import("./index-e7f413ce.js"), true ? ["index-e7f413ce.js","../css/index-065e2677.css","fade-in-width-expand.cssr-829053eb.js","Table-fba35049.js","Space-a825831f.js","use-merged-state-83482f5b.js","ChevronRight-a44d3503.js","Panel-52de3899.js","../css/Panel-69551513.css","Icon-20c98a7b.js"] : void 0, import.meta.url)
+        component: () => __vitePreload(() => import("./index-c909ad0b.js"), true ? ["index-c909ad0b.js","../css/index-065e2677.css","fade-in-width-expand.cssr-d4070e8e.js","Table-26eb2b43.js","Space-025b428f.js","use-merged-state-d9ecddb6.js","ChevronRight-c12bf639.js","Panel-2ae0748d.js","../css/Panel-69551513.css","Icon-eb094341.js"] : void 0, import.meta.url)
       }
     ]
   }
