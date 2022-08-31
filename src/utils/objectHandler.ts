@@ -22,3 +22,13 @@ export const del = (o: Object, k: PropertyKey): boolean => Reflect.deletePropert
 export const getKeyList = (o: Object): Array<string> => Reflect.ownKeys(o).map(humpToLine);
 
 export const getValueList = (o: object): Array<any> => getKeys(o).map(k => get(o, k));
+
+export const isEmpty = (data: any) => {
+  if (Array.isArray(data)) {
+    return data.length === 0;
+  } else if (data instanceof Object) {
+    return getKeys(data).length === 0;
+  } else {
+    return !!data;
+  }
+};

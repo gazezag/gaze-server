@@ -1,6 +1,6 @@
 import { execute, ExecuteResult, sql } from '../model/mysql';
 import { TableName } from '../config';
-import { del, set } from '../utils/objectHandler';
+import { del, get, has, set } from '../utils/objectHandler';
 import { lineToHump } from '../utils/entityTransform';
 
 type Stuff = { tableName: string; works: Promise<Array<any>> };
@@ -19,22 +19,37 @@ export const fetchAllServer = async (begin: number, end: number): Promise<Data> 
       .map(tableNmae => {
         return {
           tableName: tableNmae,
-          works:
-            tableNmae === TableName.stackTrace
-              ? queryDataByTime(tableNmae, begin, end, true)
-              : queryDataByTime(tableNmae, begin, end)
+          works: queryDataByTime(tableNmae, begin, end, tableNmae === TableName.stackTrace)
         };
       })
       // .map(async (stuff: Stuff) => set(data, lineToHump(String(stuff.tableName)), await stuff.works));
       .map(async (stuff: Stuff) => {
         const lines = await stuff.works;
+
         set(
           data,
           lineToHump(String(stuff.tableName)),
-          lines.map(line => {
-            del(line, 'id');
-            return line;
-          })
+          // lines.map(line => {
+          //   del(line, 'id');
+          //   return line;
+          // })
+          // TODO
+          lines.reduce((res, line) => {
+            if (has(line, 'value') && Array.isArray(get(line, 'value'))) {
+              res.push(
+                ...line.value.map((v: any) => {
+                  return {
+                    time: line.time,
+                    value: v
+                  };
+                })
+              );
+            } else {
+              del(line, 'id');
+              res.push(line);
+            }
+            return res;
+          }, [])
         );
       })
   );

@@ -11,8 +11,8 @@ export const MySQLConfig = {
   DB_NAME: 'gaze',
   HOST: '127.0.0.1',
   PORT: 3306,
-  USER_NAME: 'username', // your username
-  PASSWORD: 'password', // your password
+  USER_NAME: 'root', // your username
+  PASSWORD: '62632170', // your password
   CONNECTION_LIMIT: 60 * 60 * 1000,
   CONNECT_TIMEOUT: 1000 * 60 * 60,
   ACQUIRE_TIMEOUT: 60 * 60 * 1000,

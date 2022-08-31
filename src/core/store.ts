@@ -1,3 +1,4 @@
+import { isEmpty } from '../utils/objectHandler';
 import { MessagePriority, ServerConfig } from '../config';
 import { Message, MessageItem } from '../types/message';
 
@@ -32,6 +33,10 @@ class Store {
   }
 
   enqueue(message: Message, priority: MessagePriority) {
+    if (isEmpty(message.data)) {
+      return;
+    }
+
     const item = {
       priority,
       value: message
