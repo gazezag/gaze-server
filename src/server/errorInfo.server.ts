@@ -1,6 +1,6 @@
 import { execute, sql } from '../model/mysql';
 import { ServerSendEventName, TableName } from '../config';
-import { getKeyList, getValueList } from '../utils/objectHandler';
+import { getKeyList, getValueList, isEmpty } from '../utils/objectHandler';
 import {
   CorsErrorDetail,
   CorsErrorInfoPO,
@@ -57,8 +57,8 @@ const jsErrorHandler = (infoDTO: ErrorInfoDTO, works: Array<Promise<any>>): Erro
   const jsErrorInfoPO: JsErrorInfoPO = {
     time,
     errorUid,
-    message: (message as any) === {} ? '' : message,
-    errorType: (errorType as any) === {} ? 'UnHandledRejection' : errorType,
+    message: isEmpty(message) ? '' : message,
+    errorType: isEmpty(errorType) ? 'UnHandledRejection' : errorType,
     reason: (detail as PromiseRejectDetail).reason || '',
     stackTraceUid: time
   };
