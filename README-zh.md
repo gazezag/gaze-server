@@ -43,6 +43,8 @@
 
 ## Implement
 
+![3241662828972_ pic](https://user-images.githubusercontent.com/76992456/189495359-7aded4e1-afaf-4042-b11e-3cee72804417.jpg)
+
 ### Processing of requests
 
 各数据的处理都大同小异, 仅以 performance timing 数据作为例子展示一条完整的数据链路
