@@ -1,40 +1,42 @@
 # gaze-server
 
-中文文档传送门
-
-The server of the front-end performance monitoring platform
+一个前端性能监控平台的中间服务器
 
 ## Todo
 
 ### refactor
 
-1. release script
+1. 发布脚本
 
-2. build script (swc? esbuild? babel?)
+2. 构建脚本 (swc? esbuild? babel?)
 
-3. do more data processing
+3. 把更多的数据计算工作移到服务端来
+
+4. 产品呈现方式?(docker? web? app?)
+
+5. 也许可以用二分查找优化一下优先级队列的查找
 
 ## usage
 
-1. clone the project
-2. configure the database
+1. 克隆项目
+2. 配置数据库
    ```typescript
    // src/config/index.ts
    export const MySQLConfig = {
      DB_NAME: 'gaze',
      HOST: '127.0.0.1',
      PORT: 3306,
-     USER_NAME: 'username', // your username
-     PASSWORD: 'password', // your password
+     USER_NAME: 'username', // 你的数据库用户名
+     PASSWORD: 'password', // 你的数据库密码
      CONNECTION_LIMIT: 60 * 60 * 1000,
      CONNECT_TIMEOUT: 1000 * 60 * 60,
      ACQUIRE_TIMEOUT: 60 * 60 * 1000,
      TIMEOUT: 1000 * 60 * 60 * 1000
    };
    ```
-3. execute the sql file( `src/gaze.sql` )
+3. 执行 sql 文件( `src/gaze.sql` )
 
-4. run it
+4. 跑一下
    ```sh
      npm run dev
    ```
@@ -43,33 +45,33 @@ The server of the front-end performance monitoring platform
 
 ### Processing of requests
 
-Take the processing of the performance timing data as an example to show a complete data link
+各数据的处理都大同小异, 仅以 performance timing 数据作为例子展示一条完整的数据链路
 
 #### Router
 
-It is mainly to accept the requests
+主要用来接受请求
 
 > src/router/performanceTiming.routes.ts
 
 ```typescript
 const router = new Router({ prefix: '/performance-timing' });
 router
-  // this route is used to process Image Request
+  // 这个路由用来接收 ImageRequest
   .get('/empty.gif', async (ctx, next) => {
     const data: PerformanceTimingDTO = JSON.parse(decodeURIComponent(ctx.search).slice(1));
 
-    // data is stored and pushed here
+    // 数据会在 controller 进行处理
     await performanceTimingController(data);
     await next();
   })
-  // Beacon Request and Ajax Request will be handled here
+  // Beacon 和 Ajax 走这里
   .post('/add', async (ctx, next) => {
     const cotnentType = ctx.request.headers['content-type'];
 
-    // use different 'Content-Type' to distinguish what kind of request it is
+    // 使用不同的 content-type 来区分是 Beacon 还是 Ajax
     const data =
       cotnentType === 'application/x-www-form-urlencoded'
-        ? JSON.parse(Object.keys(ctx.request.body)[0]).data // no better way to deal with it here for the time being
+        ? JSON.parse(Object.keys(ctx.request.body)[0]).data // 这里暂时没有更好的数据方式...
         : cotnentType === 'application/json; charset=UTF-8'
         ? ctx.request.body
         : {};
@@ -87,7 +89,7 @@ export default router;
 
 #### Controller
 
-store the data which has accepted from the router
+存储从请求中接收到的数据
 
 > src/controller/performanceTiming.controller.ts
 
@@ -95,10 +97,10 @@ store the data which has accepted from the router
 export const performanceTimingController = async (
   performanceTimingDTO: PerformanceTimingDTO<any>
 ) => {
-  // store and clean up the data
+  // 在 server 中进行数据的清洗以及持久化
   const performanceTiming = await performanceTimingServer(performanceTimingDTO);
 
-  // enqueue data to store
+  // 入队服务器内部 store 等待推送
   store.enqueue(
     getMessage(performanceTiming, ServerSendEventName.performanceTiming),
     MessagePriority.PERFORMANCE_DATA
@@ -120,7 +122,7 @@ export const performanceTimingServer = async (performanceTimingDTO: PerformanceT
     value: type === 'first-input-delay' ? performanceTimingDTO.value.delay : value
   };
 
-  // store data into database
+  // 执行 SQL 语句进行持久化
   const [_, err] = await execute(
     sql()
       .insert()
@@ -131,7 +133,7 @@ export const performanceTimingServer = async (performanceTimingDTO: PerformanceT
   );
 
   if (err) {
-    // TODO handle the error
+    // TODO 错误处理
     console.log(`Error ${JSON.stringify(err)}`);
     return err;
   }
@@ -142,7 +144,7 @@ export const performanceTimingServer = async (performanceTimingDTO: PerformanceT
 
 ### SSE
 
-This server mainly uses SSE(Server Send Events) to implement server-side push
+该架构主要使用 SSE(Server Send Events) 来进行服务端推送
 
 > src/router/sse.rotues.ts
 
@@ -150,13 +152,14 @@ This server mainly uses SSE(Server Send Events) to implement server-side push
 const router = new Router();
 
 router.get('/get-data', async ctx => {
+  // 使用转换流来搭建信道
   const stream = new Transform();
   stream._transform = (msg, _, cb) => {
     stream.push(msg);
     cb();
   };
 
-  // set headers
+  // 配置响应头
   ctx.response.set('Content-Type', 'text/event-stream');
   ctx.response.set('Cache-Control', 'no-cache');
   ctx.response.set('Connection', 'keep-alive');
@@ -164,9 +167,10 @@ router.get('/get-data', async ctx => {
   ctx.response.status = 200;
   ctx.response.body = stream;
 
-  // polling the store
+  // 轮询 Store
   const timer = setInterval(() => {
     if (!store.isEmpty()) {
+      // 写入流
       stream.write(store.dequeue());
     }
   }, 100);
@@ -179,7 +183,7 @@ router.get('/get-data', async ctx => {
 export default router;
 ```
 
-The client will accept it like this
+客户端会像这样接受服务端推送的数据
 
 ```typescript
 const getSourceListener = (target: string) => {
@@ -203,7 +207,7 @@ const getSourceListener = (target: string) => {
 
 ### Store
 
-In order to ensure global sharing of unique instances, singleton mode is used here.
+这里使用了单例模式来解决全局实例不唯一的问题
 
 > src/core/store.ts
 
@@ -226,7 +230,7 @@ class Store {
     return this._instance;
   }
 
-  // the binary search can be used here to optimize the algorithm
+  // 这里应该可以用二分查找优化效率
   enqueue(message: Message, priority: MessagePriority) {
     if (isEmpty(message.data)) return;
 
