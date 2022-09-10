@@ -1,6 +1,6 @@
 # gaze-server
 
-中文文档传送门
+[中文文档传送门](https://github.com/gazezag/gaze-server/blob/master/README-zh.md)
 
 The server of the front-end performance monitoring platform
 
@@ -40,6 +40,8 @@ The server of the front-end performance monitoring platform
    ```
 
 ## Implement
+
+![3241662828972_ pic](https://user-images.githubusercontent.com/76992456/189495388-f4cdc882-a75c-4790-948f-55f14fd2fdc8.jpg)
 
 ### Processing of requests
 
